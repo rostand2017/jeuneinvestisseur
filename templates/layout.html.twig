@@ -47,24 +47,8 @@
 						</span>
 
                     <a href="#" class="left-topbar-item">
-                        über uns
+                        A propos
                     </a>
-
-                    {% if app.user is null %}
-                        <a href="{{ path('app_register') }}" class="left-topbar-item">
-                            anmelden
-                        </a>
-                        <a href="{{ path('app_login') }}" class="left-topbar-item">
-                            einloggen
-                        </a>
-                    {% else %}
-                        <a href="{{ path('app_logout') }}" class="left-topbar-item">
-                            abmelden
-                        </a>
-                        <a href="{{ path('change_password') }}" class="left-topbar-item">
-                            Passwort bearbeiten
-                        </a>
-                    {% endif %}
                 </div>
 
                 <div class="right-topbar">
@@ -74,14 +58,6 @@
 
                     <a href="#">
                         <span class="fab fa-twitter"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-pinterest-p"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-vimeo-v"></span>
                     </a>
 
                     <a href="#">
@@ -206,7 +182,7 @@
                                 {% if categoryWithNews.news | length > 0 %}
                                     <div class="sub-mega-menu">
                                         <div class="nav flex-column nav-pills" role="tablist">
-                                            <a class="nav-link active" data-toggle="pill" href="#enter-1" role="tab">All</a>
+                                            <a class="nav-link active" data-toggle="pill" href="#enter-1" role="tab">Tout</a>
                                         </div>
 
                                         <div class="tab-content">
@@ -341,7 +317,7 @@
                         </p>
 
                         <p class="f1-s-1 cl11 p-b-16">
-                            Any questions? Call us on (+1) 96 716 6879
+                            Une question? Contactez nous au (+237) 655 48 36 76
                         </p>
 
                         <div class="p-t-15">
@@ -354,14 +330,6 @@
                             </a>
 
                             <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
-                                <span class="fab fa-pinterest-p"></span>
-                            </a>
-
-                            <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
-                                <span class="fab fa-vimeo-v"></span>
-                            </a>
-
-                            <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
                                 <span class="fab fa-youtube"></span>
                             </a>
                         </div>
@@ -371,7 +339,7 @@
                 <div class="col-sm-6 col-lg-4 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <h5 class="f1-m-7 cl0">
-                            Popular Posts
+                            Les plus aimés
                         </h5>
                     </div>
 
@@ -403,7 +371,7 @@
                 <div class="col-sm-6 col-lg-4 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <h5 class="f1-m-7 cl0">
-                            Category
+                            Catégories
                         </h5>
                     </div>
 

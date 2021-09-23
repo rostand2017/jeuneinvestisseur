@@ -1,4 +1,4 @@
-# RXNEWS
+# JEUNE INVESTISSEUR
 A simple and pretty news application. Write, edit and publish a news, manage a users
 account. A user can authenticate, see news, comment and reply to another.
 

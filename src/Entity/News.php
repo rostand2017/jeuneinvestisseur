@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * News
  *
- * @ORM\Table(name="news", indexes={@ORM\Index(name="fk_association6", columns={"user"}), @ORM\Index(name="fk_association4", columns={"category"})})
+ * @ORM\Table(name="news", indexes={@ORM\Index(name="fk_association6", columns={"admin"}), @ORM\Index(name="fk_association4", columns={"category"})})
  * @ORM\Entity(repositoryClass="App\Repository\NewsRepository")
  */
 class News
@@ -32,9 +32,30 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", nullable=false)
+     * @ORM\Column(name="content", type="text", nullable=false)
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="metadescription", type="text", nullable=false)
+     */
+    private $metaDescription;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="views", type="integer", nullable=true)
+     */
+    private $views;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="is_deleted", type="boolean", nullable=false)
+     */
+    private $isDeleted;
 
     /**
      * @var string
@@ -42,6 +63,22 @@ class News
      * @ORM\Column(name="image", type="string", length=254, nullable=false)
      */
     private $image;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="durationtotal", type="integer", nullable=true)
+     */
+    private $durationTotal;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="readduration", type="integer", nullable=true)
+     */
+    private $readDuration;
 
     /**
      * @var \DateTime
@@ -68,11 +105,11 @@ class News
     private $category;
 
     /**
-     * @var User
+     * @var Admin
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="Admin")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="user", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="admin", referencedColumnName="id")
      * })
      */
     private $user;
@@ -84,6 +121,8 @@ class News
         $this->createdat = new \DateTime();
         $this->updatedat = new \DateTime();
         $this->categories = new ArrayCollection();
+        $this->isDeleted = false;
+        $this->views = 0;
     }
 
     public function getCategories(){
@@ -167,17 +206,96 @@ class News
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getUser(): ?Admin
     {
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function setUser(?Admin $user): self
     {
         $this->user = $user;
 
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isDeleted(): bool
+    {
+        return $this->isDeleted;
+    }
+
+    /**
+     * @param bool $isDeleted
+     */
+    public function setIsDeleted(bool $isDeleted): void
+    {
+        $this->isDeleted = $isDeleted;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription(): string
+    {
+        return $this->metaDescription;
+    }
+
+    /**
+     * @param string $metaDescription
+     */
+    public function setMetaDescription(string $metaDescription): void
+    {
+        $this->metaDescription = $metaDescription;
+    }
+
+    /**
+     * @return int
+     */
+    public function getViews(): int
+    {
+        return $this->views;
+    }
+
+    /**
+     * @param int $views
+     */
+    public function setViews(int $views): void
+    {
+        $this->views = $views;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDurationTotal(): int
+    {
+        return $this->durationTotal;
+    }
+
+    /**
+     * @param int $durationTotal
+     */
+    public function setDurationTotal(int $durationTotal): void
+    {
+        $this->durationTotal = $durationTotal;
+    }
+
+    /**
+     * @return int
+     */
+    public function getReadDuration(): int
+    {
+        return $this->readDuration;
+    }
+
+    /**
+     * @param int $readDuration
+     */
+    public function setReadDuration(int $readDuration): void
+    {
+        $this->readDuration = $readDuration;
+    }
 
 }

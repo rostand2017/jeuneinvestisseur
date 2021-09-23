@@ -151,7 +151,7 @@
 
                                         <!--  -->
                                         <a href="{{ path('news_category', {'category':categoryWithNews.category.id, 'title':categoryWithNews.category.title}) }}" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
-                                            alles sehen
+                                            voir tous
                                             <i class="fs-12 m-l-5 fa fa-caret-right"></i>
                                         </a>
                                     </div>
@@ -243,7 +243,7 @@
                         <div>
                             <div class="how2 how2-cl4 flex-s-c">
                                 <h3 class="f1-m-2 cl3 tab01-title">
-                                    Most Popular
+                                    Les plus aimés
                                 </h3>
                             </div>
 
@@ -261,19 +261,10 @@
                                 {% endfor %}
                             </ul>
                         </div>
-
-                        <!--  -->
-                        <div class="flex-c-s p-t-8">
-                            <a href="#">
-                                <img class="max-w-full" src="images/banner-02.jpg" alt="IMG">
-                            </a>
-                        </div>
-
-                        <!--  -->
                         <div class="p-t-50">
                             <div class="how2 how2-cl4 flex-s-c">
                                 <h3 class="f1-m-2 cl3 tab01-title">
-                                    Stay Connected
+                                    Restez connecté
                                 </h3>
                             </div>
 
@@ -335,7 +326,7 @@
 
                             <p class="f1-s-1 cl0 p-b-25">
                                 <!-- Get all latest content delivered to your email a few times a month. -->
-                                Lassen Sie sich mehrmals im Monat die neuesten Inhalte per E-Mail übermitteln.
+                                Recevez les dernières actualités sur les cryptomonaie et strategie d'investissement par email
                             </p>
                             <div id="message"></div>
                             <form id="addForm" action="{{ path('news_subscribe') }}" class="size-a-9 pos-relative">

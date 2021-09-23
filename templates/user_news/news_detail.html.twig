@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Details news{% endblock %}
+{% block title %}{{ news.title }}{% endblock %}
+{% block metadescription %}{{ news.metadescription }}{% endblock %}
 {% block styles %}{% endblock %}
 
 {% block body %}
@@ -8,7 +9,7 @@
         <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
             <div class="f2-s-1 p-r-30 m-tb-6">
                 <a href="{{ path('index') }}" class="breadcrumb-item f1-s-3 cl9">
-                    Home
+                    Accueil
                 </a>
 
                 <a href="{{ path('news_category', {category: news.category.id, title: news.category.title}) }}" class="breadcrumb-item f1-s-3 cl9">
@@ -52,11 +53,11 @@
 								</span>
 
                                 <span class="f1-s-3 cl8 m-r-15">
-									{{ viewers | length }}  Ansicht{% if viewers | length > 1 %}en{% endif %}
+									{{ viewers | length }}  vue{% if viewers | length > 1 %}s{% endif %}
 								</span>
 
                                 <a href="#commentContainer" class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
-                                    {{ comments | length }} Kommentar{% if comments | length > 1 %}e{% endif %}
+                                    {{ comments | length }} Commentaire{% if comments | length > 1 %}s{% endif %}
                                 </a>
                             </div>
 
@@ -64,7 +65,7 @@
                                 <img src="{{ news.image }}" alt="IMG">
                             </div>
 
-                            <p class="f1-s-11 cl6 p-b-25">{{ news.content }}</p>
+                            <div class="f1-s-11 cl6 p-b-25">{{ news.content | raw }}</div>
 
                             <!-- Tag
                             <div class="flex-s-s p-t-12 p-b-15">
@@ -86,7 +87,7 @@
                             <!-- Share -->
                             <div class="flex-s-s">
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
-									Teilen:
+									Partagez:
 								</span>
 
                                 <div class="flex-wr-s-s size-w-0">
@@ -98,16 +99,6 @@
                                     <a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
                                         <i class="fab fa-twitter m-r-7"></i>
                                         Twitter
-                                    </a>
-
-                                    <a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                        <i class="fab fa-google-plus-g m-r-7"></i>
-                                        Google+
-                                    </a>
-
-                                    <a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                        <i class="fab fa-pinterest-p m-r-7"></i>
-                                        Pinterest
                                     </a>
                                 </div>
                             </div>
@@ -139,11 +130,11 @@
                         <!-- Leave a comment -->
                         <div>
                             <h4 class="f1-l-4 cl3 p-b-12">
-                                Hinterlasse einen Kommentar
+                                Laissez un commentaire
                             </h4>
 
                             <p class="f1-s-13 cl8 p-b-40">
-                                Ihre E-Mail-Adresse wird nicht veröffentlicht. Erforderliche Felder sind markiert *
+                                Votre adresse email ne sera pas mis à la vue de tous. Les champs obligatoires sont marqués par une étoile *
                             </p>
 
                             <form method="post" id="addForm" action="{{ path('comment_save', {news: news.id}) }}">
@@ -159,7 +150,7 @@
                                 {% endif %}
 
                                 <button type="submit" id="addComment" class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
-                                    Kommentar posten
+                                    Commentez
                                 </button>
                             </form>
                         </div>
@@ -173,7 +164,7 @@
                         <div class="p-b-60">
                             <div class="how2 how2-cl4 flex-s-c">
                                 <h3 class="f1-m-2 cl3 tab01-title">
-                                    Kategorie
+                                    Catégories
                                 </h3>
                             </div>
 
@@ -188,118 +179,12 @@
                             </ul>
                         </div>
 
-                        <!-- Archive -->
-                        <div class="p-b-37">
-                            <div class="how2 how2-cl4 flex-s-c">
-                                <h3 class="f1-m-2 cl3 tab01-title">
-                                    Archive
-                                </h3>
-                            </div>
-
-                            <ul class="p-t-32">
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											July 2018
-										</span>
-
-                                        <span>
-											(9)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											June 2018
-										</span>
-
-                                        <span>
-											(39)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											May 2018
-										</span>
-
-                                        <span>
-											(29)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											April  2018
-										</span>
-
-                                        <span>
-											(35)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											March 2018
-										</span>
-
-                                        <span>
-											(22)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											February 2018
-										</span>
-
-                                        <span>
-											(32)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											January 2018
-										</span>
-
-                                        <span>
-											(21)
-										</span>
-                                    </a>
-                                </li>
-
-                                <li class="p-rl-4 p-b-19">
-                                    <a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
-										<span>
-											December 2017
-										</span>
-
-                                        <span>
-											(26)
-										</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
 
                         <!-- Popular Posts -->
                         <div class="p-b-30">
                             <div class="how2 how2-cl4 flex-s-c">
                                 <h3 class="f1-m-2 cl3 tab01-title">
-                                    Popular Post
+                                    Les plus aimés
                                 </h3>
                             </div>
 
@@ -378,7 +263,7 @@
     <script>
         $('.reply').on('click', function (e) {
            $('#replyId').val($(this).data('id'));
-           $('#replyingTo').html('Antwort zu <span class="text-success">@'+ $(this).data('name') +'</span>');
+           $('#replyingTo').html('Réponse à <span class="text-success">@'+ $(this).data('name') +'</span>');
            $('#reply_cancel').css({display: "inline"});
         });
 
@@ -398,11 +283,11 @@
                 data: data,
                 type: 'post',
                 beforeSend: function () {
-                    $('#addComment').text('Warten auf...').prop({disabled: true});
+                    $('#addComment').text('Patientez ...').prop({disabled: true});
                     $("#message").html("");
                 },
                 complete: function () {
-                    $('#addComment').text('Kommentar posten').prop({disabled: false});
+                    $('#addComment').text('Commentez').prop({disabled: false});
                 },
                 success: function (data) {
                     if(data.status){
@@ -416,7 +301,7 @@
                     }
                 },
                 error: function () {
-                    $("#message").html("<span class='text-warning'>Stelle sicher, dass Sie eine Internetverbindung haben</span>");
+                    $("#message").html("<span class='text-warning'>Vérifiez votre connexion internet</span>");
                 }
             })
         });
