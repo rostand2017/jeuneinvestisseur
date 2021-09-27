@@ -18,6 +18,7 @@ use App\Entity\Viewers;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class DefaultController extends AbstractController
 {
@@ -63,7 +64,7 @@ class DefaultController extends AbstractController
         return $this->render('user_news/news_category.html.twig', compact("categories", "categoriesWithNews", "news", "category", "title", "popularsNews"));
     }
 
-    public function details(Request $request, News $news){
+    public function details(Request $request, News $news, HttpClientInterface $client){
         $newsSession = $request->getSession()->get(self::NEWS_SESSIONS, false);
         $em = $this->getDoctrine()->getManager();
         $popularsNews = $em->getRepository(News::class)->getPopularsNews(5);
@@ -71,7 +72,20 @@ class DefaultController extends AbstractController
             if(!array_key_exists($news->getId(), $newsSession)){
                 $viewer = new Viewers();
                 $key = $this->getUniqueKey();
-                $viewer->setNews($news)->setViewerkey($key);
+                $ip = $request->getClientIp();
+                // to remove on production
+                $ip = "150.72.150.181";
+
+                $responseHttp = $client->request(
+                    'GET',
+                    'http://ip-api.com/json/'.$ip,
+                    ['json' => true]
+                );
+                $news->setViews($news->getViews()+1);
+                $viewer->setNews($news)
+                    ->setViewerkey($key)
+                    ->setIp($ip)
+                    ->setCountry($responseHttp->toArray()['country']);
                 array_push($newsSession, $news->getId());
                 $request->getSession()->set(self::NEWS_SESSIONS, $newsSession);
                 $em->persist($viewer);
@@ -88,7 +102,8 @@ class DefaultController extends AbstractController
             $_news = $em->getRepository(News::class)->findBy(['category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
             array_push($categoriesWithNews, ['category'=>$category, 'news'=>$_news]);
         }
-        return $this->render('user_news/news_detail.html.twig', compact("categoriesWithNews", "categories", "news", "viewers", "comments", "popularsNews"));
+        $tags = mb_split(",", $news->getTags());
+        return $this->render('user_news/news_detail.html.twig', compact("categoriesWithNews", "categories", "news", "viewers", "comments", "popularsNews", "tags"));
     }
 
     public function saveComment(Request $request, News $news){

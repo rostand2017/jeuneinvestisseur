@@ -41,9 +41,9 @@
                                 {{ news.category.title }}
                             </a>
 
-                            <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
+                            <h1 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
                                 {{ news.title }}
-                            </h3>
+                            </h1>
 
                             <div class="flex-wr-s-s p-b-40">
 								<span class="f1-s-3 cl8 m-r-15">
@@ -108,7 +108,7 @@
                             {% for comment in comments %}
                                 {% if comment.comment is null %}
                                     <div class="col-md-12 m-2 p-2 comment" data-comment="{{ comment.id }}" style="background: #f9f9f9">
-                                        <h3 class="f1-l-4 cl3 p-b-12" style="color: #17b978">{{ comment.name }}</h3>
+                                        <h4 class="cl3 p-b-12" style="color: #f2a900"><b>{{ comment.name }}</b></h4>
                                         <p>{{ comment.content }}<a href="#addForm" title="antwort" data-name="{{ comment.name }}" data-id="{{ comment.id }}" class="btn-sm reply btn-outline-success float-right p-2 m-1" style="clear: both"><i class="fa fa-reply"></i></a></p>
                                         <span class="f1-s-3">{{ comment.createdat | date('d.M.Y') }}</span>
                                         <div class="m-2"></div>
@@ -116,7 +116,7 @@
                                             {% if _comment.comment and _comment.comment.id == comment.id %}
                                                 <div style="background: #f9f9f9" class="subcomment ml-5" data-comment="{{ comment.id }}" data-subcomment="{{ _comment.id }}">
                                                     <hr>
-                                                    <h4 class="f1-l-4" style="color: #339fb9">{{ _comment.name }}</h4>
+                                                    <h4 class="" style="color: #339fb9"><b>{{ _comment.name }}</b></h4>
                                                     <p>{{ _comment.content }}</p>
                                                     <span class="f1-s-3">{{ _comment.createdat | date('d.M.Y') }}</span>
                                                 </div>
@@ -142,8 +142,8 @@
 
                                 <h4 class="f1-l-4 cl3 p-b-12"><span id="replyingTo"></span><button type="button" id="reply_cancel" style="display: none" class="btn-sm btn-outline-info">&cross;</button></h4>
                                 <input type="hidden" id="replyId" name="comment" value=""/>
-                                <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" id="comment" name="message" placeholder="Komentar..."></textarea>
-                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
+                                <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" id="comment" name="message" placeholder="Commentaire..."></textarea>
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Nom*">
 
                                 <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="E-mail*">
 
@@ -189,13 +189,13 @@
                             <ul class="p-t-35">
                                 {% for news in popularsNews %}
                                     <li class="flex-wr-sb-s p-b-30">
-                                        <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="size-w-10 wrap-pic-w hov1 trans-03">
                                             <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="IMG">
                                         </a>
 
                                         <div class="size-w-11">
                                             <h6 class="p-b-4">
-                                                <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {{ news.title }}
                                                 </a>
                                             </h6>
@@ -217,37 +217,11 @@
                             </div>
 
                             <div class="flex-wr-s-s m-rl--5">
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Fashion
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Lifestyle
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Denim
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Streetstyle
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Crafts
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Magazine
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    News
-                                </a>
-
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    Blogs
-                                </a>
+                                {% for tag in tags %}
+                                    <a href="{{ path('news_category', {title: news.category.title, category: news.category.id}) }}?search={{ tag }}" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+                                        {{ tag }}
+                                    </a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

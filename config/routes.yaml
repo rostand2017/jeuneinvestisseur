@@ -10,7 +10,7 @@ news_category:
     requirements:
         category: \d+
 news_detail:
-    path: /news/{news}_{title}
+    path: /news/{news}_{metatitle}
     controller: App\Controller\DefaultController::details
     requirements:
         news: \d+

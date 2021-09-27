@@ -36,13 +36,13 @@
                 <div class="left-topbar">
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
-								New York, NY
+								{{ app.session.get("rx-coordinate").city }}
 							</span>
 
-							<img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
+							<img class="m-b-1 m-rl-8" src="{{ asset('images/icons/icon-night.png') }}" alt="IMG">
 
 							<span>
-								HI 58° LO 56°
+								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
 							</span>
 						</span>
 
@@ -175,13 +175,13 @@
                                                         <div class="col-3">
                                                             <!-- Item post -->
                                                             <div>
-                                                                <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="wrap-pic-w hov1 trans-03">
+                                                                <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="wrap-pic-w hov1 trans-03">
                                                                     <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="{{ news.title }}">
                                                                 </a>
 
                                                                 <div class="p-t-10">
                                                                     <h5 class="p-b-5">
-                                                                        <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                                        <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                                             {{ news.title }}
                                                                         </a>
                                                                     </h5>
@@ -267,7 +267,7 @@
                         {% for news in popularsNews %}
                             {% if loop.index <= 3 %}
                                 <li class="flex-wr-sb-s p-b-20">
-                                    <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                    <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="size-w-4 wrap-pic-w hov1 trans-03">
                                         <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="{{ news.title }}">
                                     </a>
 

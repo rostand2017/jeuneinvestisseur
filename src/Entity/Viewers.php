@@ -130,9 +130,11 @@ class Viewers
     /**
      * @param string $ip
      */
-    public function setIp(string $ip): void
+    public function setIp(string $ip): self
     {
         $this->ip = $ip;
+
+        return $this;
     }
 
     /**
@@ -146,9 +148,11 @@ class Viewers
     /**
      * @param string $country
      */
-    public function setCountry(string $country): void
+    public function setCountry(string $country): self
     {
         $this->country = $country;
+
+        return $this;
     }
 
     /**

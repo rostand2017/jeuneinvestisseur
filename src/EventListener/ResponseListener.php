@@ -26,6 +26,7 @@ class ResponseListener
     }
 
     public function onKernelResponse(ResponseEvent $responseEvent){
+        $this->setRegionAndCoor($responseEvent);
         $response = $responseEvent->getResponse();
         $visitorKey = $responseEvent->getRequest()->cookies->get("rx-visitor", false);
         if(!$visitorKey){
@@ -56,6 +57,24 @@ class ResponseListener
             $this->em->persist($visitor);
             $this->em->flush();
             $response->headers->setCookie(Cookie::create("rx-visitor", $visitorKey, time() + 86400));
+        }
+    }
+
+    private function setRegionAndCoor(ResponseEvent $responseEvent){
+        if(!$responseEvent->getRequest()->getSession()->get('rx-coordinate', false)) {
+            $ip = $responseEvent->getRequest()->getClientIp();
+            // to remove on production
+            $ip = "154.72.150.181";
+            $responseHttp = $this->client->request(
+                'GET',
+                'http://ip-api.com/json/' . $ip,
+                ['json' => true]
+            );
+            $coorinate = ['city' => $responseHttp->toArray()['city'], 'lat' => $responseHttp->toArray()['lat'], 'lon' => $responseHttp->toArray()['lon']];
+            $responseEvent->getRequest()->getSession()->set("rx-coordinate", $coorinate);
+
+            var_dump($responseHttp->toArray());
+            die();
         }
     }
 }

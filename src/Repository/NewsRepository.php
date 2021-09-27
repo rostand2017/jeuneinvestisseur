@@ -25,12 +25,14 @@ class NewsRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('n');
          $result = $qb->where($qb->expr()->orX(
                 $qb->expr()->like('n.content', ':content'),
-                $qb->expr()->like('n.title', ':title')
+                $qb->expr()->like('n.title', ':title'),
+                $qb->expr()->like('n.tags', ':tags')
             ))
              ->andWhere("n.category = :category")
              ->orderBy('n.updatedat', 'desc')
             ->setParameter('title', "%".$search."%")
             ->setParameter('content', "%".$search."%")
+            ->setParameter('tags', "%".$search."%")
             ->setParameter('category', $category->getId())
             ->getQuery()->setFirstResult($offset)->setMaxResults($offset + 20)
             ->getResult();
@@ -43,11 +45,13 @@ class NewsRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('n');
          $result = $qb->where($qb->expr()->orX(
                 $qb->expr()->like('n.content', ':content'),
-                $qb->expr()->like('n.title', ':title')
+                $qb->expr()->like('n.title', ':title'),
+                $qb->expr()->like('n.tags', ':tags')
             ))
              ->orderBy('n.updatedat', 'desc')
             ->setParameter('title', "%".$search."%")
             ->setParameter('content', "%".$search."%")
+            ->setParameter('tags', "%".$search."%")
             ->getQuery()->setFirstResult($offset)->setMaxResults($offset + 3)
             ->getResult();
         return $result;
@@ -55,7 +59,7 @@ class NewsRepository extends ServiceEntityRepository
 
     public function getPopularsNews(int $nb){
         $connection = $this->_em->getConnection();
-        $sql = "SELECT n.id, n.title, n.content, n.image, n.createdat, COUNT(*) AS `nb_viewers` FROM news n LEFT JOIN viewers v ON v.news = n.id WHERE YEAR(n.createdat) = (SELECT MAX(YEAR(createdat)) FROM news) GROUP BY n.id ORDER BY `nb_viewers` DESC LIMIT 0,".$nb;
+        $sql = "SELECT n.id, n.title, n.metatitle, n.content, n.image, n.createdat, COUNT(*) AS `nb_viewers` FROM news n LEFT JOIN viewers v ON v.news = n.id WHERE YEAR(n.createdat) = (SELECT MAX(YEAR(createdat)) FROM news) GROUP BY n.id ORDER BY `nb_viewers` DESC LIMIT 0,".$nb;
         $statement = $connection->prepare($sql);
         $statement->execute();
         return $statement->fetchAll();
