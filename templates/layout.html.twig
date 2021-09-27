@@ -101,17 +101,8 @@
 
                 <li class="left-topbar">
                     <a href="#" class="left-topbar-item">
-                        About
+                        A propos
                     </a>
-                    {% if app.user is null %}
-                        <a href="{{ path('app_register') }}" class="left-topbar-item">
-                            Sing up
-                        </a>
-                    {% else %}
-                        <a href="{{ path('app_login') }}" class="left-topbar-item">
-                            Log in
-                        </a>
-                    {% endif %}
                 </li>
 
                 <li class="right-topbar">
@@ -124,14 +115,6 @@
                     </a>
 
                     <a href="#">
-                        <span class="fab fa-pinterest-p"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-vimeo-v"></span>
-                    </a>
-
-                    <a href="#">
                         <span class="fab fa-youtube"></span>
                     </a>
                 </li>
@@ -139,7 +122,7 @@
 
             <ul class="main-menu-m">
                 <li>
-                    <a href="{{ path('index') }}">Homepage</a>
+                    <a href="{{ path('index') }}">Accueil</a>
                 </li>
                 {% for category in categories %}
                     <li>
@@ -173,7 +156,7 @@
 
                     <ul class="main-menu">
                         <li class="main-menu-active">
-                            <a href="{{ path('index') }}">Homepage</a>
+                            <a href="{{ path('index') }}">Accueil</a>
                         </li>
                         {% for categoryWithNews in categoriesWithNews %}
                             <li class="mega-menu-item">
@@ -193,7 +176,7 @@
                                                             <!-- Item post -->
                                                             <div>
                                                                 <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="wrap-pic-w hov1 trans-03">
-                                                                    <img src="{{ news.image }}" alt="IMG">
+                                                                    <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="{{ news.title }}">
                                                                 </a>
 
                                                                 <div class="p-t-10">
@@ -227,69 +210,6 @@
                                 {% endif %}
                             </li>
                         {% endfor %}
-                        {% if app.user and "ROLE_ADMIN" in app.user.roles %}
-                            <li class="mega-menu-item">
-                                <a href="{{ path('index') }}">Admin-Funktionen</a>
-                                <div class="sub-mega-menu">
-                                    <div class="nav flex-column nav-pills" role="tablist">
-                                        <a class="nav-link active" data-toggle="pill" href="#enter-1" role="tab">Alle</a>
-                                    </div>
-
-                                    <div class="tab-content">
-                                        <div class="tab-pane show active" id="enter-1" role="tabpanel">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <!-- Item post -->
-                                                    <div>
-                                                        <a href="{{ path("news_index") }}" class="wrap-pic-w hov1 trans-03">
-                                                            <img src="" alt="IMG">
-                                                        </a>
-
-                                                        <div class="p-t-10">
-                                                            <h5 class="p-b-5">
-                                                                <a href="{{ path('news_index') }}" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                    Nachrichten hinzufügen
-                                                                </a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-3">
-                                                    <div>
-                                                        <a href="{{ path("user_index") }}" class="wrap-pic-w hov1 trans-03">
-                                                            <img src="" alt="IMG">
-                                                        </a>
-
-                                                        <div class="p-t-10">
-                                                            <h5 class="p-b-5">
-                                                                <a href="{{ path('user_index') }}" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                    Benutzer
-                                                                </a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-3">
-                                                    <div>
-                                                        <a href="{{ path("category_index") }}" class="wrap-pic-w hov1 trans-03">
-                                                            <img src="" alt="IMG">
-                                                        </a>
-
-                                                        <div class="p-t-10">
-                                                            <h5 class="p-b-5">
-                                                                <a href="{{ path('category_index') }}" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                    Kategorie
-                                                                </a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        {% endif %}
                     </ul>
                 </nav>
             </div>
@@ -348,7 +268,7 @@
                             {% if loop.index <= 3 %}
                                 <li class="flex-wr-sb-s p-b-20">
                                     <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                        <img src="{{ news.image }}" alt="IMG">
+                                        <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="{{ news.title }}">
                                     </a>
 
                                     <div class="size-w-5">

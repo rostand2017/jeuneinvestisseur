@@ -41,10 +41,9 @@
     <section class="bg0">
         <div class="container">
             <div class="row m-rl--1">
-                {% if lastFournews | length <= 0%}PUTAIN{% endif %}
                 {% if lastFournews | length > 0%}
                     <div class="{% if lastFournews | length == 1%}col-md-12 {% else %} col-md-6 {% endif %}p-rl-1 p-b-2">
-                        <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{ asset(lastFournews[0].image) }});">
+                        <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{ images_blog_url }}{{ lastFournews[0].image }});">
                             <a href="{{ path('news_detail', {'news': lastFournews[0].id, 'title': lastFournews[0].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -71,7 +70,7 @@
                     <div class="row m-rl--1">
                         {% if lastFournews | length > 1%}
                             <div class="col-12 p-rl-1 p-b-2">
-                                <div class="bg-img1 {% if lastFournews | length == 2%}size-a-3{% else %}size-a-4{% endif %} how1 pos-relative" style="background-image: url({{ asset(lastFournews[1].image) }});">
+                                <div class="bg-img1 {% if lastFournews | length == 2%}size-a-3{% else %}size-a-4{% endif %} how1 pos-relative" style="background-image: url({{ images_blog_url }}{{ lastFournews[1].image }});">
                                     <a href="{{ path('news_detail', {'news': lastFournews[1].id, 'title': lastFournews[1].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
@@ -91,7 +90,7 @@
 
                         {% if lastFournews | length > 2 %}
                             <div class="{% if lastFournews | length == 3 %}col-sm-12{% else %}col-sm-12{% endif %} p-rl-1 p-b-2">
-                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{ asset(lastFournews[2].image) }});">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{ images_blog_url }}{{ lastFournews[2].image }});">
                                     <a href="{{ path('news_detail', {'news': lastFournews[2].id, 'title': lastFournews[2].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -111,7 +110,7 @@
 
                         {% if lastFournews | length > 3 %}
                             <div class="col-sm-6 p-rl-1 p-b-2">
-                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{ asset(lastFournews[3].image) }});">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{ images_blog_url }}{{ lastFournews[3].image }});">
                                     <a href="{{ path('news_detail', {'news': lastFournews[3].id, 'title': lastFournews[3].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -166,7 +165,7 @@
                                                     <!-- Item post -->
                                                     <div class="m-b-30">
                                                         <a href="{{ path('news_detail', {'news': categoryWithNews.news[0].id, 'title': categoryWithNews.news[0].title}) }}" class="wrap-pic-w hov1 trans-03">
-                                                            <img src="{{ categoryWithNews.news[0].image }}" alt="IMG">
+                                                            <img src="{{ images_blog_url }}{{ categoryWithNews.news[0].image }}" alt="IMG">
                                                         </a>
 
                                                         <div class="p-t-20">
@@ -198,7 +197,7 @@
                                                         {% if loop.index != 0 %}
                                                             <div class="flex-wr-sb-s m-b-30">
                                                                 <a href="{{ path('news_detail', {'news': news.id, 'title': news.title}) }}" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                                                    <img src="{{ news.image }}" alt="IMG">
+                                                                    <img src="{{ images_blog_url }}{{ news.image }}" alt="IMG">
                                                                 </a>
 
                                                                 <div class="size-w-2">
@@ -232,7 +231,7 @@
                                 </div>
                             {% endif %}
                         {% else %}
-                            <p class="text-center">Keine Nachrichten verfügbar</p>
+                            <p class="text-center">Aucune news disponible</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -356,7 +355,7 @@
                 data: data,
                 type: 'post',
                 beforeSend: function () {
-                    $("#message").html("<span class='text-warning'>Warte ein Moment...</span>");
+                    $("#message").html("<span class='text-warning'>Chargement...</span>");
                     $('#btnSubscribe').prop({disabled: true});
                 },
                 complete: function () {
@@ -370,7 +369,7 @@
                     }
                 },
                 error: function () {
-                    $("#message").html("<span class='text-warning'>Stelle sicher, dass Sie eine Internetverbindung haben</span>");
+                    $("#message").html("<span class='text-warning'>Verifiez votre connexion internet</span>");
                 }
             })
         });

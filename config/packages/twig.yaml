@@ -1,3 +1,6 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
     form_themes: ['bootstrap_4_layout.html.twig']
+    globals:
+        thumbnails_blog_url: 'http://127.0.0.1:8000/uploads/blog/thumbnails/'
+        images_blog_url: 'http://127.0.0.1:8000/uploads/blog/images/'

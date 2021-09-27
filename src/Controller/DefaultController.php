@@ -130,15 +130,15 @@ class DefaultController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $emails = $em->getRepository(Emails::class)->findOneByEmail($email);
             if($emails)
-                return new JsonResponse(['status'=>0, 'message'=> 'Diese E-Mail-Adresse existiert bereits']);
+                return new JsonResponse(['status'=>0, 'message'=> 'Vous êtes déjà abonné']);
             $e = new Emails();
             $e->setEmail($email);
             $em->persist($e);
             $em->flush();
-            return new JsonResponse(['status'=>1, 'message'=> 'Erfolgreiches Abonnement']);
+            return new JsonResponse(['status'=>1, 'message'=> 'Abonnement réussi']);
 
         }else{
-            return new JsonResponse(['status'=>0, 'message'=> 'Sie müssen eine richtige E-mail hinzufügen']);
+            return new JsonResponse(['status'=>0, 'message'=> 'Renseignez une adresse email valable']);
         }
     }
 

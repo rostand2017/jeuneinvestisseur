@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row m-rl--1">
                     <div class="col-12 p-rl-1 p-b-2">
-                        <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url('{{ news[0].image }}');">
+                        <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url('{{ images_blog_url }}{{ news[0].image }}');">
                             <a href="{{ path('news_detail', {news: news[0].id, title: news[0].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -67,7 +67,7 @@
                     {% if tableSize > 0 %}
                         {% for i in 1..tableSize%}
                             <div class="col-sm-6 col-md-3 p-rl-1 p-b-2">
-                                <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url('{{ news[i].image }}');">
+                                <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url('{{ thumbnails_blog_url }}{{ news[i].image }}');">
                                     <a href="{{ path('news_detail', {news: news[i].id, title: news[i].title}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -101,7 +101,7 @@
                             <div class="col-sm-6 p-r-25 p-r-15-sr991">
                                 <div class="p-b-53">
                                     <a href="{{ path('news_detail', {news: news[i].id, title: news[i].title}) }}" class="wrap-pic-w hov1 trans-03">
-                                        <img src="{{ news[i].image }}" alt="IMG">
+                                        <img src="{{ thumbnails_blog_url }}{{ news[i].image }}" alt="{{ news[i].title }}">
                                     </a>
 
                                     <div class="flex-col-s-c p-t-16">
@@ -128,7 +128,7 @@
                                         <p class="f1-s-11 cl6 txt-center p-b-16">{{ news[i].content }}</p>
 
                                         <a href="{{ path('news_detail', {news: news[i].id, title: news[i].title}) }}" class="f1-s-1 cl9 hov-cl10 trans-03">
-                                            Mehr lesen
+                                            Lire plus
                                             <i class="m-l-2 fa fa-long-arrow-alt-right"></i>
                                         </a>
                                     </div>

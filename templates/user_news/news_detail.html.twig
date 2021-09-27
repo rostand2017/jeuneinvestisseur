@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="wrap-pic-max-w p-b-30">
-                                <img src="{{ news.image }}" alt="IMG">
+                                <img src="{{ images_blog_url }}{{ news.image }}" alt="IMG">
                             </div>
 
                             <div class="f1-s-11 cl6 p-b-25">{{ news.content | raw }}</div>
@@ -143,11 +143,9 @@
                                 <h4 class="f1-l-4 cl3 p-b-12"><span id="replyingTo"></span><button type="button" id="reply_cancel" style="display: none" class="btn-sm btn-outline-info">&cross;</button></h4>
                                 <input type="hidden" id="replyId" name="comment" value=""/>
                                 <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" id="comment" name="message" placeholder="Komentar..."></textarea>
-                                {% if app.user is null %}
-                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
 
-                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="E-mail*">
-                                {% endif %}
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="E-mail*">
 
                                 <button type="submit" id="addComment" class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
                                     Commentez
@@ -192,7 +190,7 @@
                                 {% for news in popularsNews %}
                                     <li class="flex-wr-sb-s p-b-30">
                                         <a href="{{ path('news_detail', {news: news.id, title: news.title}) }}" class="size-w-10 wrap-pic-w hov1 trans-03">
-                                            <img src="{{ news.image }}" alt="IMG">
+                                            <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="IMG">
                                         </a>
 
                                         <div class="size-w-11">
@@ -261,6 +259,7 @@
 
 {% block scripts %}
     <script>
+        $('.reply').on('click', function (e) {
         $('.reply').on('click', function (e) {
            $('#replyId').val($(this).data('id'));
            $('#replyingTo').html('Réponse à <span class="text-success">@'+ $(this).data('name') +'</span>');
