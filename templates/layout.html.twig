@@ -88,13 +88,13 @@
                 <li class="left-topbar">
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
-								New York, NY
+								{{ app.session.get("rx-coordinate").city }}
 							</span>
 
 							<img class="m-b-1 m-rl-8" src="{{ asset('images/icons/icon-night.png') }}" alt="IMG">
 
 							<span>
-								HI 58° LO 56°
+								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
 							</span>
 						</span>
                 </li>

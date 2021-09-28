@@ -3,7 +3,11 @@
 {% block metadescription %}{{ news.metadescription }}{% endblock %}
 {% block styles %}{% endblock %}
 
+
 {% block body %}
+    <div class="read-progress" style="height: 5px;background-color: #d6d6d6;top: 0;width: 100%;position:fixed;z-index: 1000">
+        <div class="bar" style="height: 5px;background-color: #f2a900;width: 0%;transition: width 0.4s ease"></div>
+    </div>
     <!-- Breadcrumb -->
     <div class="container">
         <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
@@ -65,7 +69,7 @@
                                 <img src="{{ images_blog_url }}{{ news.image }}" alt="IMG">
                             </div>
 
-                            <div class="f1-s-11 cl6 p-b-25">{{ news.content | raw }}</div>
+                            <div class="f1-s-11 cl6 p-b-25" id="blog-conainer">{{ news.content | raw }}</div>
 
                             <!-- Tag
                             <div class="flex-s-s p-t-12 p-b-15">
@@ -234,7 +238,6 @@
 {% block scripts %}
     <script>
         $('.reply').on('click', function (e) {
-        $('.reply').on('click', function (e) {
            $('#replyId').val($(this).data('id'));
            $('#replyingTo').html('Réponse à <span class="text-success">@'+ $(this).data('name') +'</span>');
            $('#reply_cancel').css({display: "inline"});
@@ -278,5 +281,19 @@
                 }
             })
         });
+        $(function () {
+            window.onscroll = function (ev) {
+                var docPosition = document.documentElement.scrollTop || document.body.scrollTop,
+                    blogOffset = $('#blog-conainer').get(0).offsetTop + $('#blog-conainer').get(0).offsetParent.offsetTop,
+                    scroll = blogOffset - window.screen.availHeight,
+                    blogHeight = $('#blog-conainer').get(0).offsetHeight,
+                    visiblePart = window.screen.availHeight - blogOffset + docPosition,
+                    barPercentage = visiblePart < 0 ? 0 : (visiblePart / blogHeight)*100;
+                console.log(barPercentage);
+                if(barPercentage >= 0 || barPercentage <= 100)
+                    $('.read-progress .bar').css({width: barPercentage+"%"});
+
+            }
+        })
     </script>
 {% endblock %}
