@@ -72,9 +72,6 @@ class ResponseListener
             );
             $coorinate = ['city' => $responseHttp->toArray()['city'], 'lat' => $responseHttp->toArray()['lat'], 'lon' => $responseHttp->toArray()['lon']];
             $responseEvent->getRequest()->getSession()->set("rx-coordinate", $coorinate);
-
-            var_dump($responseHttp->toArray());
-            die();
         }
     }
 }

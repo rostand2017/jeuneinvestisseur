@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a743a72f-821e-4164-aa7c-e3661405ca80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/user_news/index.html.twig" afterPath="$PROJECT_DIR$/templates/user_news/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/ResponseListener.php" afterPath="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
       <change beforePath="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" afterPath="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,13 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="news_detail.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="news_detail.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_news/news_detail.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="77" lean-forward="false" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+            <state relative-caret-position="311">
+              <caret line="299" column="53" lean-forward="true" selection-start-line="299" selection-start-column="53" selection-end-line="299" selection-end-column="53" />
               <folding>
                 <element signature="e#232#325#0#HTML" expanded="true" />
+                <element signature="e#352#435#0#HTML" expanded="true" />
                 <element signature="e#5227#5249#0#HTML" expanded="true" />
               </folding>
             </state>
@@ -128,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseListener.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ResponseListener.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+            <state relative-caret-position="314">
+              <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
               <folding>
                 <element signature="e#118#141#0#PHP" expanded="true" />
               </folding>
@@ -245,10 +245,10 @@
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/templates/user_news/news_category.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
         <option value="$PROJECT_DIR$/templates/user_news/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" />
+        <option value="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
       </list>
     </option>
   </component>
@@ -396,24 +396,13 @@
             <path>
               <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user_news" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -478,7 +467,7 @@
       <workItem from="1585037870368" duration="1255000" />
       <workItem from="1585044446700" duration="3631000" />
       <workItem from="1632036586199" duration="3730000" />
-      <workItem from="1632208353882" duration="50891000" />
+      <workItem from="1632208353882" duration="53249000" />
     </task>
     <task id="LOCAL-00001" summary="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management">
       <created>1585055717858</created>
@@ -501,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1632781350724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding a scrollbarprogression to show the readpercentage">
+      <created>1632807170141</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632807170141</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236843000" />
+    <option name="totallyTimeSpent" value="239201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1380" height="784" extended-state="0" />
@@ -561,7 +557,8 @@
     <MESSAGE value="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management" />
     <MESSAGE value="Adding the service to save the visitor" />
     <MESSAGE value="Adding to the banner the coordinate informations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding to the banner the coordinate informations" />
+    <MESSAGE value="Adding a scrollbarprogression to show the readpercentage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a scrollbarprogression to show the readpercentage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,14 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28126">
-          <caret line="1776" column="16" lean-forward="false" selection-start-line="1776" selection-start-column="16" selection-end-line="1776" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -919,29 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
-          <folding>
-            <element signature="e#759#1517#0#PHP" expanded="false" />
-            <element signature="e#1625#2653#0#PHP" expanded="false" />
-            <element signature="e#4769#6208#0#PHP" expanded="false" />
-            <element signature="e#6214#6977#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#118#141#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -963,13 +929,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="1762" column="9" lean-forward="false" selection-start-line="1762" selection-start-column="9" selection-end-line="1762" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_news/news_detail.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="77" lean-forward="false" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+        <state relative-caret-position="311">
+          <caret line="299" column="53" lean-forward="true" selection-start-line="299" selection-start-column="53" selection-end-line="299" selection-end-column="53" />
           <folding>
             <element signature="e#232#325#0#HTML" expanded="true" />
+            <element signature="e#352#435#0#HTML" expanded="true" />
             <element signature="e#5227#5249#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+          <folding>
+            <element signature="e#759#1517#0#PHP" expanded="false" />
+            <element signature="e#1625#2653#0#PHP" expanded="false" />
+            <element signature="e#4769#6208#0#PHP" expanded="false" />
+            <element signature="e#6214#6977#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+          <folding>
+            <element signature="e#118#141#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

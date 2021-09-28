@@ -289,10 +289,27 @@
                     blogHeight = $('#blog-conainer').get(0).offsetHeight,
                     visiblePart = window.screen.availHeight - blogOffset + docPosition,
                     barPercentage = visiblePart < 0 ? 0 : (visiblePart / blogHeight)*100;
-                console.log(barPercentage);
                 if(barPercentage >= 0 || barPercentage <= 100)
                     $('.read-progress .bar').css({width: barPercentage+"%"});
 
+            }
+
+            var duration = {{ news.readduration }},
+                currentDuration = 0;
+            if(duration > 0){
+                var timer = setInterval(function () {
+                    if(currentDuration < duration){
+                        console.log("Set request to server to increment the read to 1 minute");
+                    }else{
+                        console.log("End of the request. User have read all");
+                        clearInterval(timer);
+                    }
+                    currentDuration++;
+                }, 60000);
+            }else{
+                setTimeout(function () {
+                    console.log("set a unique request to server")
+                }, 20000);
             }
         })
     </script>
