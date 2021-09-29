@@ -152,7 +152,12 @@
 
             <!-- Banner -->
             <div class="banner-header">
-                <a href="https://themewagon.com/themes/free-bootstrap-4-html5-news-website-template-magnews2/"><img src="{{ asset('images/banner-01.jpg') }}" alt="IMG"></a>
+                <!--<a href="https://themewagon.com/themes/free-bootstrap-4-html5-news-website-template-magnews2/"><img src="{{ asset('images/banner-01.jpg') }}" alt="IMG"></a>-->
+                {% set btnCurr = app.session.get('btc') %}
+                <span><img width="40" src="{{ btnCurr.logo }}" alt=""> <span class="ml-1 mr-2">${{ btnCurr.quote.USD.price | round }}</span>
+                    {% if btnCurr.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ btnCurr.quote.USD.percent_change_24h | round(6, 'floor') }}</span>
+                    {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ btnCurr.quote.USD.percent_change_24h | round(6, 'floor') }}</span> {% endif %}
+                </span>
             </div>
         </div>
 

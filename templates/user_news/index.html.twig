@@ -133,6 +133,31 @@
         </div>
     </section>
 
+    <!-- cryptos -->
+    <section class="bg0 ml-lg-4 mr-lg-4 mt-3 card">
+        <table class="table table-responsive">
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>24h%</th>
+            <th>7J%</th>
+            <th>Argent sur le marché</th>
+            {% for currency in currencies %}
+                <tr>
+                    <td><img src="{{ currency.logo }}" width="40" alt="{{ currency.name }}"> {{ currency.name }}</td>
+                    <td>${{ currency.quote.USD.price }}</td>
+                    <td>
+                        {% if currency.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_24h }}</span>
+                        {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ currency.quote.USD.percent_change_24h }}</span> {% endif %}
+                    </td>
+                    <td>
+                        {% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d }}</span>
+                        {% else %}<span class="text-danger"><i class="fa fa-caret-down"></i>{{ currency.quote.USD.percent_change_7d }}</span>{% endif %}
+                    </td>
+                    <td>${{ currency.quote.USD.market_cap }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
     <!-- Post -->
     <section class="bg0 p-t-70">
         <div class="container">

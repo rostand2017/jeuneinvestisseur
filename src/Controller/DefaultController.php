@@ -29,8 +29,18 @@ class DefaultController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     const NEWS_SESSIONS = "news_sessions";
+    const COINMARKET_APIKEY = "a3a63f25-480f-404d-8ee1-357a043f5e18";
+    private $client;
+
+    public function __construct(HttpClientInterface $client)
+    {
+        $this->client = $client;
+    }
 
     public function index(){
+
+        $currencies = $this->getCryptoCurrencyList();
+
         $em = $this->getDoctrine()->getManager();
         $lastFournews = $em->getRepository(News::class)->findBy([], ['createdat'=>'desc'], 3, 0);
         $popularsNews = $em->getRepository(News::class)->getPopularsNews(5);
@@ -40,7 +50,7 @@ class DefaultController extends AbstractController
             $news = $em->getRepository(News::class)->findBy(['category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
             array_push($categoriesWithNews, ['category'=>$category, 'news'=>$news]);
         }
-        return $this->render('user_news/index.html.twig', compact("categories", "lastFournews", "categoriesWithNews", "popularsNews"));
+        return $this->render('user_news/index.html.twig', compact("categories", "lastFournews", "categoriesWithNews", "popularsNews", "currencies"));
     }
 
     public function news(){
@@ -175,5 +185,30 @@ class DefaultController extends AbstractController
 
     public function getUniqueKey(){
         return md5(uniqid());
+    }
+
+
+    private function getCryptoCurrencyList(){
+        $responseHttp = $this->client->request(
+            'GET',
+            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+            ['query'=>['limit' => 8, "percent_change_24h_min"=>0], "headers"=>['X-CMC_PRO_API_KEY'=>self::COINMARKET_APIKEY]]
+        );
+        $datas = $responseHttp->toArray()['data'];
+        $i = 0;
+        foreach ($datas as $data){
+            $datas[$i]['logo'] = $this->getCrypoLogo($data['symbol']);
+            $i++;
+        }
+        return $datas;
+    }
+
+    private function getCrypoLogo($symbol): string {
+        $responseHttp = $this->client->request(
+            'GET',
+            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info',
+            ["query"=>["symbol"=>$symbol], "headers"=>['X-CMC_PRO_API_KEY'=>self::COINMARKET_APIKEY]]
+        );
+        return $responseHttp->toArray()['data'][$symbol]['logo'];
     }
 }
