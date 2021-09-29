@@ -68,31 +68,28 @@ class DefaultController extends AbstractController
         $newsSession = $request->getSession()->get(self::NEWS_SESSIONS, false);
         $em = $this->getDoctrine()->getManager();
         $popularsNews = $em->getRepository(News::class)->getPopularsNews(5);
-        if($newsSession){
-            if(!array_key_exists($news->getId(), $newsSession)){
-                $viewer = new Viewers();
-                $key = $this->getUniqueKey();
-                $ip = $request->getClientIp();
-                // to remove on production
-                $ip = "150.72.150.181";
 
-                $responseHttp = $client->request(
-                    'GET',
-                    'http://ip-api.com/json/'.$ip,
-                    ['json' => true]
-                );
-                $news->setViews($news->getViews()+1);
-                $viewer->setNews($news)
-                    ->setViewerkey($key)
-                    ->setIp($ip)
-                    ->setCountry($responseHttp->toArray()['country']);
-                array_push($newsSession, $news->getId());
-                $request->getSession()->set(self::NEWS_SESSIONS, $newsSession);
-                $em->persist($viewer);
-                $em->flush();
-            }
-        }else{
-            $request->getSession()->set(self::NEWS_SESSIONS, [$news->getId()]);
+        if(!$newsSession || !array_key_exists("news-".$news->getId(), $newsSession)){
+            $viewer = new Viewers();
+            $key = $this->getUniqueKey();
+            $ip = $request->getClientIp();
+            // to remove on production
+            $ip = "150.72.150.181";
+
+            $responseHttp = $client->request(
+                'GET',
+                'http://ip-api.com/json/'.$ip,
+                ['json' => true]
+            );
+            $news->setViews($news->getViews()+1);
+            $viewer->setNews($news)
+                ->setViewerkey($key)
+                ->setIp($ip)
+                ->setCountry($responseHttp->toArray()['country']);
+            $newsSession["news-".$news->getId()] = ["newsId"=>$news->getId(), "viewKey"=>$key];
+            $request->getSession()->set(self::NEWS_SESSIONS, $newsSession);
+            $em->persist($viewer);
+            $em->flush();
         }
         $categories = $em->getRepository(Category::class)->findAll();
         $viewers = $em->getRepository(Viewers::class)->findByNews($news->getId());
@@ -154,6 +151,25 @@ class DefaultController extends AbstractController
 
         }else{
             return new JsonResponse(['status'=>0, 'message'=> 'Renseignez une adresse email valable']);
+        }
+    }
+
+    public function incrementReadDuration(Request $request, $viewsKey){
+        $em = $this->getDoctrine()->getManager();
+        $viewers = $em->getRepository(Viewers::class)->findOneByViewerkey($viewsKey);
+        $newsSession = $request->getSession()->get(self::NEWS_SESSIONS, false);
+        $news = $viewers->getNews();
+        if($newsSession && $viewers->getViewerkey() == $newsSession["news-".$news->getId()]["viewKey"] && $news->getReadDuration() != 0 && $viewers->getDuration() < $news->getReadDuration()){
+            $em = $this->getDoctrine()->getManager();
+            $viewers->setDuration($viewers->getDuration()+1);
+            $viewers->setReadPercentage($viewers->getDuration()/$news->getReadDuration()*100);
+            $news->setDurationTotal($news->getDurationTotal()+1);
+            $em->persist($news);
+            $em->persist($viewers);
+            $em->flush();
+            return new JsonResponse(['status'=>1]);
+        }else{
+            return new JsonResponse(['status'=>0, "ss"=>'  '.$viewers->getViewerkey()]);
         }
     }
 

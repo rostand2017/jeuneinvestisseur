@@ -1,6 +1,9 @@
 {% extends 'layout.html.twig' %}
 {% block title %}{{ news.title }}{% endblock %}
+{% block title2 %}{{ news.title }}{% endblock %}
 {% block metadescription %}{{ news.metadescription }}{% endblock %}
+{% block metadescription2 %}{{ news.metadescription }}{% endblock %}
+{% block pageImage %}{{ thumbnails_blog_url }}{{ news.image }}{% endblock %}
 {% block styles %}{% endblock %}
 
 
@@ -295,20 +298,20 @@
             }
 
             var duration = {{ news.readduration }},
-                currentDuration = 0;
+                currentDuration = 0,
+                url = "{{ path('increment_read_duration', {viewsKey: app.session.get('news_sessions')['news-'~news.id]['viewKey']}) }}";
             if(duration > 0){
                 var timer = setInterval(function () {
                     if(currentDuration < duration){
-                        console.log("Set request to server to increment the read to 1 minute");
+                        $.get(url);
                     }else{
-                        console.log("End of the request. User have read all");
                         clearInterval(timer);
                     }
                     currentDuration++;
-                }, 60000);
+                }, 65000);
             }else{
                 setTimeout(function () {
-                    console.log("set a unique request to server")
+                    $.get(url);
                 }, 20000);
             }
         })

@@ -76,6 +76,8 @@ class Viewers
     public function __construct()
     {
         $this->createdat = new \DateTime();
+        $this->duration = 0;
+        $this->readPercentage = 0;
     }
 
     public function getId(): ?int

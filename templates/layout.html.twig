@@ -4,8 +4,15 @@
     <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Rostand Fotso">
+
+    <meta name="description" content="{% block metadescription %}Crypto with tincs - Découvrez les rouages de la crypto et devenez financièrement indépendant. {% endblock %}">
+    <meta property="og:site_name" content="Crypto with Tincs">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="{% block pageImage %}{{ asset('images/icons/logo-01.png') }}{% endblock %}">
+    <meta name="twitter:title" property="og:title" itemprop="name" content="{%block title2 %}Crypto with tincs - Découvrez les rouages de la crypto et devenez financièrement indépendant{%endblock%}">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="{% block metadescription2 %}{% endblock %}">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ asset('images/icons/logo-01.png') }}"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <!--===============================================================================================-->
@@ -34,6 +41,7 @@
         <div class="topbar">
             <div class="content-topbar container h-100">
                 <div class="left-topbar">
+                    {% if app.session.get("rx-coordinate") %}
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
 								{{ app.session.get("rx-coordinate").city }}
@@ -45,6 +53,7 @@
 								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
 							</span>
 						</span>
+                    {% endif %}
 
                     <a href="#" class="left-topbar-item">
                         A propos
@@ -86,6 +95,7 @@
         <div class="menu-mobile">
             <ul class="topbar-mobile">
                 <li class="left-topbar">
+                        {% if app.session.get("rx-coordinate") %}
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
 								{{ app.session.get("rx-coordinate").city }}
@@ -97,6 +107,7 @@
 								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
 							</span>
 						</span>
+                        {% endif %}
                 </li>
 
                 <li class="left-topbar">
@@ -227,7 +238,7 @@
                 <div class="col-lg-4 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <a href="{{ path('index') }}">
-                            <img class="max-s-full" src="{{ asset('images/icons/logo-02.png') }}" alt="LOGO">
+                            <img class="max-s-full" src="{{ asset('images/icons/logo-01.png') }}" style="margin-bottom: 27px;" alt="LOGO">
                         </a>
                     </div>
 

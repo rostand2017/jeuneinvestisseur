@@ -19,6 +19,11 @@ comment_save:
     controller: App\Controller\DefaultController::saveComment
     requirements:
         news: \d+
+increment_read_duration:
+    path: /news/read_increment/{viewsKey}
+    controller: App\Controller\DefaultController::incrementReadDuration
+    requirements:
+        viewers: \w+
 news_subscribe:
     path: /subscribe
     controller: App\Controller\DefaultController::subscribe

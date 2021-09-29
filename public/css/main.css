@@ -719,7 +719,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 
 .logo-mobile img {
   max-width: calc(100% - 35px);
-  max-height: 60%;
+  max-height: 90%;
   position:absolute;
   top: 0; 
   left: 0; 
@@ -1084,7 +1084,7 @@ body {padding-right: 0px !important;}
 
 .breadcrumb-item+.breadcrumb-item::before {
   height: 100%;
-  content: "\f105";
+  /*content: "\f105";*/
   font-family: FontAwesome;
   font-size: 12px;
   padding-right: 10px;

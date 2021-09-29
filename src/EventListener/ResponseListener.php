@@ -70,8 +70,8 @@ class ResponseListener
                 'http://ip-api.com/json/' . $ip,
                 ['json' => true]
             );
-            $coorinate = ['city' => $responseHttp->toArray()['city'], 'lat' => $responseHttp->toArray()['lat'], 'lon' => $responseHttp->toArray()['lon']];
-            $responseEvent->getRequest()->getSession()->set("rx-coordinate", $coorinate);
+            $coordinate = ['city' => $responseHttp->toArray()['city'], 'lat' => $responseHttp->toArray()['lat'], 'lon' => $responseHttp->toArray()['lon']];
+            $responseEvent->getRequest()->getSession()->set("rx-coordinate", $coordinate);
         }
     }
 }
