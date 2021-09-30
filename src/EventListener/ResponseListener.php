@@ -31,9 +31,6 @@ class ResponseListener
         $visitorKey = $responseEvent->getRequest()->cookies->get("rx-visitor", false);
         if(!$visitorKey){
             $ip = $responseEvent->getRequest()->getClientIp();
-            // to remove on production
-            $ip = "154.72.150.181";
-
             $visitors = $this->em->getRepository(Visitor::class)->findByIp($ip);
             if(count($visitors) > 0){
                 $date = new \DateTime();
@@ -63,8 +60,6 @@ class ResponseListener
     private function setRegionAndCoor(ResponseEvent $responseEvent){
         if(!$responseEvent->getRequest()->getSession()->get('rx-coordinate', false)) {
             $ip = $responseEvent->getRequest()->getClientIp();
-            // to remove on production
-            $ip = "154.72.150.181";
             $responseHttp = $this->client->request(
                 'GET',
                 'http://ip-api.com/json/' . $ip,
