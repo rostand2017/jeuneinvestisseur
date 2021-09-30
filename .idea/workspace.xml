@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a743a72f-821e-4164-aa7c-e3661405ca80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/EventListener/ResponseListener.php" afterPath="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,13 +61,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseListener.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResponseListener.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="889">
+            <state relative-caret-position="725">
               <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
               <folding>
                 <element signature="e#118#141#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+              <folding>
+                <element signature="e#1791#1887#0#PHP" expanded="false" />
+                <element signature="e#1893#2921#0#PHP" expanded="false" />
+                <element signature="e#4815#6254#0#PHP" expanded="false" />
+                <element signature="e#6260#7023#0#PHP" expanded="false" />
+                <element signature="e#7029#8085#0#PHP" expanded="false" />
+                <element signature="e#8091#8158#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Mehr lesen</find>
       <find>#17b978</find>
       <find>17b978</find>
       <find>title: news.title</find>
@@ -107,6 +123,7 @@
       <find>follower</find>
       <find>bg0 p-t-70</find>
       <find>154.72.150.181</find>
+      <find>$ip</find>
     </findStrings>
     <replaceStrings>
       <replace>lastFournews</replace>
@@ -176,12 +193,12 @@
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/templates/user_news/news_category.html.twig" />
         <option value="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/templates/user_news/index.html.twig" />
         <option value="$PROJECT_DIR$/src/EventListener/RequestListener.php" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
+        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -330,7 +347,7 @@
               <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="EventListener" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -399,7 +416,7 @@
       <workItem from="1585044446700" duration="3631000" />
       <workItem from="1632036586199" duration="3730000" />
       <workItem from="1632208353882" duration="73616000" />
-      <workItem from="1632911486248" duration="9165000" />
+      <workItem from="1632911486248" duration="10078000" />
     </task>
     <task id="LOCAL-00001" summary="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management">
       <created>1585055717858</created>
@@ -471,11 +488,18 @@
       <option name="project" value="LOCAL" />
       <updated>1632985874120</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="removing of the fake ip address">
+      <created>1632987287664</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632987287664</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268733000" />
+    <option name="totallyTimeSpent" value="269646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1380" height="784" extended-state="0" />
@@ -537,7 +561,8 @@
     <MESSAGE value="Adding the cryptocurrency with value and variation" />
     <MESSAGE value="Adding htaccess" />
     <MESSAGE value="Changing the url oft the thumbnails and full image for the blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing the url oft the thumbnails and full image for the blog" />
+    <MESSAGE value="removing of the fake ip address" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing of the fake ip address" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -644,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -763,22 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="209" column="99" lean-forward="false" selection-start-line="209" selection-start-column="99" selection-end-line="209" selection-end-column="99" />
-          <folding>
-            <element signature="e#1791#1887#0#PHP" expanded="false" />
-            <element signature="e#1893#2921#0#PHP" expanded="false" />
-            <element signature="e#2927#4884#0#PHP" expanded="false" />
-            <element signature="e#4890#6329#0#PHP" expanded="false" />
-            <element signature="e#6335#7098#0#PHP" expanded="false" />
-            <element signature="e#7104#8160#0#PHP" expanded="false" />
-            <element signature="e#8166#8233#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -845,12 +847,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="95" column="92" lean-forward="true" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+          <folding>
+            <element signature="e#535#1519#0#PHP" expanded="false" />
+            <element signature="e#1604#3178#0#PHP" expanded="false" />
+            <element signature="e#3258#3930#0#PHP" expanded="false" />
+            <element signature="e#4022#5619#0#PHP" expanded="false" />
+            <element signature="e#5704#6085#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="889">
+        <state relative-caret-position="725">
           <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
           <folding>
             <element signature="e#118#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+          <folding>
+            <element signature="e#1791#1887#0#PHP" expanded="false" />
+            <element signature="e#1893#2921#0#PHP" expanded="false" />
+            <element signature="e#4815#6254#0#PHP" expanded="false" />
+            <element signature="e#6260#7023#0#PHP" expanded="false" />
+            <element signature="e#7029#8085#0#PHP" expanded="false" />
+            <element signature="e#8091#8158#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

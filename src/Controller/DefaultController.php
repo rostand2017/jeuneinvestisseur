@@ -83,8 +83,6 @@ class DefaultController extends AbstractController
             $viewer = new Viewers();
             $key = $this->getUniqueKey();
             $ip = $request->getClientIp();
-            // to remove on production
-            $ip = "150.72.150.181";
 
             $responseHttp = $client->request(
                 'GET',
