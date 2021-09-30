@@ -2,5 +2,5 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     form_themes: ['bootstrap_4_layout.html.twig']
     globals:
-        thumbnails_blog_url: 'https://twadmin.cryptowithtincs.com/uploads/blog/thumbnails/'
-        images_blog_url: 'https://twadmin.cryptowithtincs.com/uploads/blog/images/'
+        thumbnails_blog_url: 'https://twadmin.cryptowithtincs.com/public/uploads/blog/thumbnails/'
+        images_blog_url: 'https://twadmin.cryptowithtincs.com/public/uploads/blog/images/'
