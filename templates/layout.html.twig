@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Rejoignez la Première communauté d’investisseurs crypto d’Afrique{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Rostand Fotso">
 
-    <meta name="description" content="{% block metadescription %}Crypto with tincs - Découvrez les rouages de la crypto et devenez financièrement indépendant. {% endblock %}">
+    <meta name="description" content="{% block metadescription %}Notre but est de  vous permettre  d'apréhender, de comprendre la technologie blockchain et l'univers des cryptos-monnaies en général {% endblock %}">
     <meta property="og:site_name" content="Crypto with Tincs">
     <meta property="og:image" itemprop="image primaryImageOfPage" content="{% block pageImage %}{{ asset('images/icons/logo-01.png') }}{% endblock %}">
-    <meta name="twitter:title" property="og:title" itemprop="name" content="{%block title2 %}Crypto with tincs - Découvrez les rouages de la crypto et devenez financièrement indépendant{%endblock%}">
+    <meta name="twitter:title" property="og:title" itemprop="name" content="{%block title2 %}Crypto with tincs - Rejoignez la Première communauté d’investisseurs crypto d’Afrique{%endblock%}">
     <meta name="twitter:description" property="og:description" itemprop="description" content="{% block metadescription2 %}{% endblock %}">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{{ asset('images/icons/logo-01.png') }}"/>
@@ -154,10 +154,12 @@
             <div class="banner-header">
                 <!--<a href="https://themewagon.com/themes/free-bootstrap-4-html5-news-website-template-magnews2/"><img src="{{ asset('images/banner-01.jpg') }}" alt="IMG"></a>-->
                 {% set btnCurr = app.session.get('btc') %}
+                {% if btnCurr %}
                 <span><img width="40" src="{{ btnCurr.logo }}" alt=""> <span class="ml-1 mr-2">${{ btnCurr.quote.USD.price | round }}</span>
                     {% if btnCurr.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ btnCurr.quote.USD.percent_change_24h | round(6, 'floor') }}</span>
                     {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ btnCurr.quote.USD.percent_change_24h | round(6, 'floor') }}</span> {% endif %}
                 </span>
+                {%  endif %}
             </div>
         </div>
 
@@ -240,7 +242,7 @@
     <div class="bg2 p-t-40 p-b-25">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 p-b-20">
+                <div class="col-lg-6 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <a href="{{ path('index') }}">
                             <img class="max-s-full" src="{{ asset('images/icons/logo-01.png') }}" style="margin-bottom: 27px;" alt="LOGO">
@@ -249,7 +251,9 @@
 
                     <div>
                         <p class="f1-s-1 cl11 p-b-16">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor magna eget elit efficitur, at accumsan sem placerat. Nulla tellus libero, mattis nec molestie at, facilisis ut turpis. Vestibulum dolor metus, tincidunt eget odio
+                            Notre but : vous permettre  d'apréhender, de comprendre la technologie blockchain et l'univers des cryptos-monnaies en général
+                            afin d'être un investisseur rentable. <br>
+                            Rejoignez la Première communauté d’investisseurs crypto d’Afrique
                         </p>
 
                         <p class="f1-s-1 cl11 p-b-16">
@@ -272,39 +276,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 p-b-20">
-                    <div class="size-h-3 flex-s-c">
-                        <h5 class="f1-m-7 cl0">
-                            Les plus aimés
-                        </h5>
-                    </div>
-
-                    <ul>
-                        {% for news in popularsNews %}
-                            {% if loop.index <= 3 %}
-                                <li class="flex-wr-sb-s p-b-20">
-                                    <a href="{{ path('news_detail', {news: news.id, metatitle: news.metatitle}) }}" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                        <img src="{{ thumbnails_blog_url }}{{ news.image }}" alt="{{ news.title }}">
-                                    </a>
-
-                                    <div class="size-w-5">
-                                        <h6 class="p-b-5">
-                                            <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
-                                                {{ news.title }}
-                                            </a>
-                                        </h6>
-
-                                        <span class="f1-s-3 cl6">
-										{{ news.createdat | date('M d') }}
-                                </span>
-                                    </div>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 p-b-20">
+                <div class="col-sm-6 col-lg-6 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <h5 class="f1-m-7 cl0">
                             Catégories

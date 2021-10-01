@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a743a72f-821e-4164-aa7c-e3661405ca80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/user_news/index.html.twig" afterPath="$PROJECT_DIR$/templates/user_news/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" afterPath="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +36,8 @@
       <file leaf-file-name="news_detail.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_news/news_detail.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
+            <state relative-caret-position="219">
+              <caret line="191" column="57" lean-forward="false" selection-start-line="191" selection-start-column="57" selection-end-line="191" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -44,9 +46,24 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="149" selection-end-column="156" />
-              <folding />
+            <state relative-caret-position="79">
+              <caret line="352" column="50" lean-forward="false" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+              <folding>
+                <element signature="e#17083#18177#0#HTML" expanded="false" />
+                <element signature="e#18202#20834#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="154" column="86" lean-forward="false" selection-start-line="154" selection-start-column="82" selection-end-line="154" selection-end-column="86" />
+              <folding>
+                <element signature="e#14800#14806#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,14 +78,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseListener.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
+      <file leaf-file-name="RequestListener.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EventListener/RequestListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-              <folding>
-                <element signature="e#118#141#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="227">
+              <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,11 +91,12 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+            <state relative-caret-position="120">
+              <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
               <folding>
                 <element signature="e#1791#1887#0#PHP" expanded="false" />
                 <element signature="e#1893#2921#0#PHP" expanded="false" />
+                <element signature="e#2927#4809#0#PHP" expanded="false" />
                 <element signature="e#4815#6254#0#PHP" expanded="false" />
                 <element signature="e#6260#7023#0#PHP" expanded="false" />
                 <element signature="e#7029#8085#0#PHP" expanded="false" />
@@ -94,10 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#17b978</find>
-      <find>17b978</find>
-      <find>title: news.title</find>
-      <find>'title':</find>
       <find>title:</find>
       <find>title: category.title</find>
       <find>'metatitle': lastFournews</find>
@@ -124,6 +136,10 @@
       <find>bg0 p-t-70</find>
       <find>154.72.150.181</find>
       <find>$ip</find>
+      <find>Les plus aimés</find>
+      <find>news</find>
+      <find>les plus aimés</find>
+      <find>Newslet</find>
     </findStrings>
     <replaceStrings>
       <replace>lastFournews</replace>
@@ -192,12 +208,12 @@
         <option value="$PROJECT_DIR$/src/Entity/Viewers.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/templates/user_news/news_category.html.twig" />
+        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
+        <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/user_news/news_detail.html.twig" />
         <option value="$PROJECT_DIR$/templates/user_news/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/EventListener/RequestListener.php" />
-        <option value="$PROJECT_DIR$/templates/layout.html.twig" />
-        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
+        <option value="$PROJECT_DIR$/src/EventListener/RequestListener.php" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
       </list>
     </option>
@@ -347,7 +363,12 @@
               <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="EventListener" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jeune-investisseur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeune-investisseur" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -416,7 +437,7 @@
       <workItem from="1585044446700" duration="3631000" />
       <workItem from="1632036586199" duration="3730000" />
       <workItem from="1632208353882" duration="73616000" />
-      <workItem from="1632911486248" duration="10078000" />
+      <workItem from="1632911486248" duration="14232000" />
     </task>
     <task id="LOCAL-00001" summary="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management">
       <created>1585055717858</created>
@@ -495,11 +516,18 @@
       <option name="project" value="LOCAL" />
       <updated>1632987287664</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="removing of the fake ip address">
+      <created>1632988184018</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632988184018</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269646000" />
+    <option name="totallyTimeSpent" value="273800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1380" height="784" extended-state="0" />
@@ -765,26 +793,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_news/news_detail.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/http-client-contracts/ResponseInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="156" column="36" lean-forward="false" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -821,32 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="149" selection-end-column="156" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventListener/RequestListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="e#117#154#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -861,23 +847,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="154" column="86" lean-forward="false" selection-start-line="154" selection-start-column="82" selection-end-line="154" selection-end-column="86" />
+          <folding>
+            <element signature="e#14800#14806#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_news/news_detail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="191" column="57" lean-forward="false" selection-start-line="191" selection-start-column="57" selection-end-line="191" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="352" column="50" lean-forward="false" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
+          <folding>
+            <element signature="e#17083#18177#0#HTML" expanded="false" />
+            <element signature="e#18202#20834#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EventListener/ResponseListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
+        <state relative-caret-position="17">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
           <folding>
             <element signature="e#118#141#0#PHP" expanded="true" />
+            <marker date="1633110549462" expanded="true" signature="636:1972" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener/RequestListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+        <state relative-caret-position="120">
+          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
           <folding>
             <element signature="e#1791#1887#0#PHP" expanded="false" />
             <element signature="e#1893#2921#0#PHP" expanded="false" />
+            <element signature="e#2927#4809#0#PHP" expanded="false" />
             <element signature="e#4815#6254#0#PHP" expanded="false" />
             <element signature="e#6260#7023#0#PHP" expanded="false" />
             <element signature="e#7029#8085#0#PHP" expanded="false" />
