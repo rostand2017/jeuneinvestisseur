@@ -50,7 +50,8 @@ class ResponseListener
             $visitorKey = md5(uniqid());
             $visitor->setIp($ip);
             $visitor->setViewerkey($visitorKey);
-            $visitor->setCountry($responseHttp->toArray()['country']);
+            //$visitor->setCountry($responseHttp->toArray()['country']);
+            $visitor->setCountry("Cameroun");
             $this->em->persist($visitor);
             $this->em->flush();
             $response->headers->setCookie(Cookie::create("rx-visitor", $visitorKey, time() + 86400));

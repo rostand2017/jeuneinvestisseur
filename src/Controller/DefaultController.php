@@ -146,7 +146,7 @@ class DefaultController extends AbstractController
 
     public function subscribe(Request $request){
         $email = $request->request->get('email');
-        if($email && preg_match("#.+@[a-zA-Z]+\.[a-zA-Z]{2,6}#", $email)){
+        if($email && preg_match("#.+@[a-zA-Z]+\.[a-zA-Z]{2,6}#", $email) || preg_match("#[0-9\+]{8,14}#", $email)){
             $em = $this->getDoctrine()->getManager();
             $emails = $em->getRepository(Emails::class)->findOneByEmail($email);
             if($emails)
@@ -158,7 +158,7 @@ class DefaultController extends AbstractController
             return new JsonResponse(['status'=>1, 'message'=> 'Abonnement réussi']);
 
         }else{
-            return new JsonResponse(['status'=>0, 'message'=> 'Renseignez une adresse email valable']);
+            return new JsonResponse(['status'=>0, 'message'=> 'Renseignez une adresse email ou un numéro valable']);
         }
     }
 
