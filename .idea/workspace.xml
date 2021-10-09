@@ -44,8 +44,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="278" column="79" lean-forward="false" selection-start-line="278" selection-start-column="79" selection-end-line="278" selection-end-column="79" />
+            <state relative-caret-position="408">
+              <caret line="358" column="24" lean-forward="false" selection-start-line="358" selection-start-column="24" selection-end-line="358" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -442,7 +442,7 @@
       <workItem from="1632911486248" duration="14511000" />
       <workItem from="1633241573386" duration="98000" />
       <workItem from="1633360216580" duration="9496000" />
-      <workItem from="1633774760221" duration="6756000" />
+      <workItem from="1633774760221" duration="7035000" />
     </task>
     <task id="LOCAL-00001" summary="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management">
       <created>1585055717858</created>
@@ -570,11 +570,18 @@
       <option name="project" value="LOCAL" />
       <updated>1633780133517</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="set a popup after register to newsletter">
+      <created>1633781546583</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1633781546583</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290429000" />
+    <option name="totallyTimeSpent" value="290708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1380" height="784" extended-state="0" />
@@ -642,7 +649,8 @@
     <MESSAGE value="Remove table of cryptocurrencies and adding currencies in sliders" />
     <MESSAGE value="changing of the logo, adding of the sharing button and modifying of the link for social network" />
     <MESSAGE value="set" />
-    <option name="LAST_COMMIT_MESSAGE" value="set" />
+    <MESSAGE value="set a popup after register to newsletter" />
+    <option name="LAST_COMMIT_MESSAGE" value="set a popup after register to newsletter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -962,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="278" column="79" lean-forward="false" selection-start-line="278" selection-start-column="79" selection-end-line="278" selection-end-column="79" />
+        <state relative-caret-position="408">
+          <caret line="358" column="24" lean-forward="false" selection-start-line="358" selection-start-column="24" selection-end-line="358" selection-end-column="24" />
           <folding />
         </state>
       </provider>
