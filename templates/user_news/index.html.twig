@@ -265,24 +265,9 @@
                             </div>
 
                             <ul class="p-t-35">
-                                <li class="flex-wr-sb-c p-b-20">
-                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-facebook fs-16 cl0 hov-cl0">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-
-                                    <div class="size-w-3 flex-wr-sb-c">
-										<span class="f1-s-8 cl3 p-r-20">
-											6879 Fans
-										</span>
-
-                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
-                                            J'aime
-                                        </a>
-                                    </div>
-                                </li>
 
                                 <li class="flex-wr-sb-c p-b-20">
-                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
+                                    <a href="https://twitter.com/stevetincs" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
                                         <span class="fab fa-twitter"></span>
                                     </a>
 
@@ -291,14 +276,14 @@
 											568 Abonnés
 										</span>
 
-                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+                                        <a href="https://twitter.com/stevetincs" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
                                             Suivre
                                         </a>
                                     </div>
                                 </li>
 
                                 <li class="flex-wr-sb-c p-b-20">
-                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-youtube fs-16 cl0 hov-cl0">
+                                    <a href="https://www.youtube.com/channel/UCM_dNcA_FWMHtsfoOjYhEGQ" class="size-a-8 flex-c-c borad-3 size-a-8 bg-youtube fs-16 cl0 hov-cl0">
                                         <span class="fab fa-youtube"></span>
                                     </a>
 
@@ -307,7 +292,7 @@
 											5039 Abonnés
 										</span>
 
-                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+                                        <a href="https://www.youtube.com/channel/UCM_dNcA_FWMHtsfoOjYhEGQ" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
                                             Souscrire
                                         </a>
                                     </div>
@@ -346,6 +331,7 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $('#addForm').on('submit', function (e) {
             e.preventDefault();
@@ -365,7 +351,12 @@
                 },
                 success: function (data) {
                     if(data.status){
-                        $("#message").html("<span class='text-light'>"+data.message+"</span>");
+                        Swal.fire(
+                            'Bravo !',
+                            data.message,
+                            'success'
+                        );
+                        // $("#message").html("<span class='text-light'>"+data.message+"</span>");
                     }else{
                         $("#message").html("<span class='text-danger'>"+data.message+"</span>");
                     }
