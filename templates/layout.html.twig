@@ -41,35 +41,18 @@
         <div class="topbar">
             <div class="content-topbar container h-100">
                 <div class="left-topbar">
-                    {% if app.session.get("rx-coordinate") %}
-						<span class="left-topbar-item flex-wr-s-c">
-							<span>
-								{{ app.session.get("rx-coordinate").city }}
-							</span>
-
-							<img class="m-b-1 m-rl-8" src="{{ asset('images/icons/icon-night.png') }}" alt="IMG">
-
-							<span>
-								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
-							</span>
-						</span>
-                    {% endif %}
-
                     <a href="#" class="left-topbar-item">
-                        A propos
+                        Crypto With Tincs
                     </a>
                 </div>
 
                 <div class="right-topbar">
-                    <a href="#">
-                        <span class="fab fa-facebook-f"></span>
-                    </a>
 
-                    <a href="#">
+                    <a href="https://twitter.com/stevetincs" target="_blank">
                         <span class="fab fa-twitter"></span>
                     </a>
 
-                    <a href="#">
+                    <a href="https://www.youtube.com/channel/UCM_dNcA_FWMHtsfoOjYhEGQ"  target="_blank">
                         <span class="fab fa-youtube"></span>
                     </a>
                 </div>
@@ -95,37 +78,18 @@
         <div class="menu-mobile">
             <ul class="topbar-mobile">
                 <li class="left-topbar">
-                        {% if app.session.get("rx-coordinate") %}
-						<span class="left-topbar-item flex-wr-s-c">
-							<span>
-								{{ app.session.get("rx-coordinate").city }}
-							</span>
-
-							<img class="m-b-1 m-rl-8" src="{{ asset('images/icons/icon-night.png') }}" alt="IMG">
-
-							<span>
-								Lat {{ app.session.get("rx-coordinate").lat }}°  Lon {{ app.session.get("rx-coordinate").lon }}°
-							</span>
-						</span>
-                        {% endif %}
-                </li>
-
-                <li class="left-topbar">
                     <a href="#" class="left-topbar-item">
-                        A propos
+                        Crypto With Tincs
                     </a>
                 </li>
 
                 <li class="right-topbar">
-                    <a href="#">
-                        <span class="fab fa-facebook-f"></span>
-                    </a>
 
-                    <a href="#">
+                    <a href="https://twitter.com/stevetincs" target="_blank">
                         <span class="fab fa-twitter"></span>
                     </a>
 
-                    <a href="#">
+                    <a href="https://www.youtube.com/channel/UCM_dNcA_FWMHtsfoOjYhEGQ" target="_blank">
                         <span class="fab fa-youtube"></span>
                     </a>
                 </li>
@@ -140,6 +104,9 @@
                         <a href="{{ path('news_category', {category: category.id, title: category.title}) }}">{{ category.title }}</a>
                     </li>
                 {% endfor %}
+                <li>
+                    <a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>
+                </li>
             </ul>
         </div>
 
@@ -228,6 +195,9 @@
                                 {% endif %}
                             </li>
                         {% endfor %}
+                        <li>
+                            <a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -245,7 +215,7 @@
                 <div class="col-lg-6 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <a href="{{ path('index') }}">
-                            <img class="max-s-full" width="70%" src="{{ asset('images/icons/logo-01.png') }}" style="margin-bottom: 27px;" alt="LOGO">
+                            <img class="max-s-full" width="20%" src="{{ asset('images/icons/logo-01.png') }}" style="margin-bottom: 27px;" alt="LOGO">
                         </a>
                     </div>
 
@@ -257,19 +227,16 @@
                         </p>
 
                         <p class="f1-s-1 cl11 p-b-16">
-                            Une question? Contactez nous au (+237) 655 48 36 76
+                            Une question? Contactez sur cryptowithtincs@gmail.com
                         </p>
 
                         <div class="p-t-15">
-                            <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
-                                <span class="fab fa-facebook-f"></span>
-                            </a>
 
-                            <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                            <a href="https://twitter.com/stevetincs" target="_blank" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
                                 <span class="fab fa-twitter"></span>
                             </a>
 
-                            <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                            <a href="https://www.youtube.com/channel/UCM_dNcA_FWMHtsfoOjYhEGQ"  target="_blank" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
                                 <span class="fab fa-youtube"></span>
                             </a>
                         </div>
@@ -301,7 +268,7 @@
         <div class="container size-h-4 flex-c-c p-tb-15">
 				<span class="f1-s-1 cl0 txt-center">
 					<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved - crypto with Tincs
                     </a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</span>

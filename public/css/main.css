@@ -296,7 +296,7 @@ a.left-topbar-item:hover {
 }
 
 .logo img {
-  max-width: 100%;
+  max-width: 35%;
   max-height: 50%;
 }
 
@@ -718,7 +718,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .logo-mobile img {
-  max-width: calc(100% - 35px);
+  max-width: 16%;
   max-height: 90%;
   position:absolute;
   top: 0; 
@@ -1867,4 +1867,10 @@ a.breadcrumb-item:hover {
 
 @media (max-width: 480px) {
   
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+header .left-topbar-item{
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
 }

@@ -26,7 +26,7 @@ class ResponseListener
     }
 
     public function onKernelResponse(ResponseEvent $responseEvent){
-        $this->setRegionAndCoor($responseEvent);
+        //$this->setRegionAndCoor($responseEvent);
         $response = $responseEvent->getResponse();
         $visitorKey = $responseEvent->getRequest()->cookies->get("rx-visitor", false);
         if(!$visitorKey){
@@ -50,8 +50,8 @@ class ResponseListener
             $visitorKey = md5(uniqid());
             $visitor->setIp($ip);
             $visitor->setViewerkey($visitorKey);
-            $visitor->setCountry($responseHttp->toArray()['country']);
-            //$visitor->setCountry("Cameroun");
+            //$visitor->setCountry($responseHttp->toArray()['country']);
+            $visitor->setCountry("Cameroun");
             $this->em->persist($visitor);
             $this->em->flush();
             $response->headers->setCookie(Cookie::create("rx-visitor", $visitorKey, time() + 86400));
