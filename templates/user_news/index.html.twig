@@ -21,7 +21,7 @@
                                     {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}%</span> {% endif %}
                                 </td>
                                 <td>
-                                    <b>7J% </b>{% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>
+                                    <b>7J </b>{% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>
                                 {% else %}<span class="text-danger"><i class="fa fa-caret-down"></i>{{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>{% endif %}
                                 </td>
                                 <td>${{ currency.quote.USD.market_cap | round(2, 'floor') }} sur le marché</td>
