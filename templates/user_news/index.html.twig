@@ -15,16 +15,16 @@
                         <table class="table table-responsive" style="background: #f308491a;">
                             <tr style="display: flex;align-items: center;justify-content: center;">
                                 <td><img src="{{ currency.logo }}" width="40" alt="{{ currency.name }}"> {{ currency.name }}</td>
-                                <td><b>Prix: </b>${{ currency.quote.USD.price }}</td>
+                                <td><b>Prix: </b>${{ currency.quote.USD.price | round(2, 'floor') }}</td>
                                 <td>
-                                    <b>24h% </b> {% if currency.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}</span>
-                                    {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}</span> {% endif %}
+                                    <b>24h </b> {% if currency.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}%</span>
+                                    {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}%</span> {% endif %}
                                 </td>
                                 <td>
-                                    <b>7J% </b>{% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}</span>
-                                {% else %}<span class="text-danger"><i class="fa fa-caret-down"></i>{{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}</span>{% endif %}
+                                    <b>7J% </b>{% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>
+                                {% else %}<span class="text-danger"><i class="fa fa-caret-down"></i>{{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>{% endif %}
                                 </td>
-                                <td>${{ currency.quote.USD.market_cap }} sur le marché</td>
+                                <td>${{ currency.quote.USD.market_cap | round(2, 'floor') }} sur le marché</td>
                             </tr>
                         </table>
                     </div>
