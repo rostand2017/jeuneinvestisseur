@@ -190,7 +190,7 @@ class DefaultController extends AbstractController
         $responseHttp = $this->client->request(
             'GET',
             'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
-            ['query'=>['limit' => 8, "percent_change_24h_min"=>0], "headers"=>['X-CMC_PRO_API_KEY'=>self::COINMARKET_APIKEY]]
+            ['query'=>['limit' => 10, "sort"=>"market_cap"], "headers"=>['X-CMC_PRO_API_KEY'=>self::COINMARKET_APIKEY]]
         );
         $datas = $responseHttp->toArray()['data'];
         $i = 0;
