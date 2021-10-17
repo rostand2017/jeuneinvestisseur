@@ -119,14 +119,9 @@
 
             <!-- Banner -->
             <div class="banner-header">
-                <!--<a href="https://themewagon.com/themes/free-bootstrap-4-html5-news-website-template-magnews2/"><img src="{{ asset('images/banner-01.jpg') }}" alt="IMG"></a>-->
-                {% set btnCurr = app.session.get('btc') %}
-                {% if btnCurr %}
-                <span><img width="40" src="{{ btnCurr.logo }}" alt=""> <span class="ml-1 mr-2">${{ btnCurr.quote.USD.price | round(2, 'floor') }}</span>
-                    {% if btnCurr.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ btnCurr.quote.USD.percent_change_24h | round(2, 'floor') }}%</span>
-                    {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ btnCurr.quote.USD.percent_change_24h | round(2, 'floor') }}%</span> {% endif %}
+                <span class="btcContainer">
+                    <img width="40" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="btc currency">
                 </span>
-                {%  endif %}
             </div>
         </div>
 
@@ -293,5 +288,17 @@
 <!--===============================================================================================-->
 <script src="{{ asset('js/main.js') }}"></script>
 {% block scripts %}{% endblock %}
+<script>
+    $(function (e) {
+       $('.btcContainer').html("");
+       $.get("{{ path('btc_currency') }}", function (btnCurr) {
+           console.log(btnCurr);
+          $(".btcContainer").html("<img width='40' src='"+ btnCurr.logo +"' alt='btc currency'> <span class='ml-1 mr-2'>$"+ ( Math.trunc(btnCurr.quote.USD.price) + "." + (''+btnCurr.quote.USD.price).split('.')[1]?.slice(0, 2) ) +"</span>\n" +
+           ((btnCurr.quote.USD.percent_change_24h > 0) ? ("<span class=\"text-success\"><i class=\"fa fa-caret-up\"></i>"+ Math.trunc(btnCurr.quote.USD.percent_change_24h) + "." + (''+btnCurr.quote.USD.percent_change_24h).split('.')[1]?.slice(0, 2) +"%</span>\n") :
+              ("<span class=\"text-danger\"> <i class=\"fa fa-caret-down\"></i>"+ Math.trunc(btnCurr.quote.USD.percent_change_24h) + "." + (''+btnCurr.quote.USD.percent_change_24h).split('.')[1]?.slice(0, 2) +"%</span>") )
+          );
+       });
+    });
+</script>
 </body>
 </html>

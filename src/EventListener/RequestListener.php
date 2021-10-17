@@ -25,29 +25,9 @@ class RequestListener
     public function onKernelRequest(RequestEvent $event)
     {
         if ($event->isMainRequest()) {
-            $data = $this->getBtcCurrency();
-            $event->getRequest()->getSession()->set("btc", $data);
+            // $data = $this->getBtcCurrency();
+            // $event->getRequest()->getSession()->set("btc", $data);
         }
 
-    }
-
-    private function getBtcCurrency(){
-        $responseHttp = $this->client->request(
-            'GET',
-            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
-            ['query'=>['limit' => 1], "headers"=>['X-CMC_PRO_API_KEY'=>DefaultController::COINMARKET_APIKEY]]
-        );
-        $datas = $responseHttp->toArray()['data'];
-        $datas[0]['logo'] = $this->getCrypoLogo($datas[0]['symbol']);
-        return $datas[0];
-    }
-
-    private function getCrypoLogo($symbol): string {
-        $responseHttp = $this->client->request(
-            'GET',
-            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info',
-            ["query"=>["symbol"=>$symbol], "headers"=>['X-CMC_PRO_API_KEY'=>DefaultController::COINMARKET_APIKEY]]
-        );
-        return $responseHttp->toArray()['data'][$symbol]['logo'];
     }
 }

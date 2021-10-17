@@ -39,8 +39,6 @@ class DefaultController extends AbstractController
 
     public function index(){
 
-        $currencies = $this->getCryptoCurrencyList();
-
         $em = $this->getDoctrine()->getManager();
         $lastFournews = $em->getRepository(News::class)->findBy([], ['createdat'=>'desc'], 3, 0);
         $popularsNews = $em->getRepository(News::class)->getPopularsNews(5);
@@ -50,7 +48,7 @@ class DefaultController extends AbstractController
             $news = $em->getRepository(News::class)->findBy(['category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
             array_push($categoriesWithNews, ['category'=>$category, 'news'=>$news]);
         }
-        return $this->render('user_news/index.html.twig', compact("categories", "lastFournews", "categoriesWithNews", "popularsNews", "currencies"));
+        return $this->render('user_news/index.html.twig', compact("categories", "lastFournews", "categoriesWithNews", "popularsNews"));
     }
 
     public function news(){
@@ -186,7 +184,7 @@ class DefaultController extends AbstractController
     }
 
 
-    private function getCryptoCurrencyList(){
+    public function getCryptoCurrencyList(){
         $responseHttp = $this->client->request(
             'GET',
             'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
@@ -198,7 +196,20 @@ class DefaultController extends AbstractController
             $datas[$i]['logo'] = $this->getCrypoLogo($data['symbol']);
             $i++;
         }
-        return $datas;
+        return new JsonResponse($datas);
+    }
+
+
+
+    public function getBtcCurrency(){
+        $responseHttp = $this->client->request(
+            'GET',
+            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+            ['query'=>['limit' => 1], "headers"=>['X-CMC_PRO_API_KEY'=>DefaultController::COINMARKET_APIKEY]]
+        );
+        $datas = $responseHttp->toArray()['data'];
+        $datas[0]['logo'] = $this->getCrypoLogo($datas[0]['symbol']);
+        return new JsonResponse($datas[0]);
     }
 
     private function getCrypoLogo($symbol): string {

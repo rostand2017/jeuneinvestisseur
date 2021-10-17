@@ -27,5 +27,11 @@ increment_read_duration:
 news_subscribe:
     path: /subscribe
     controller: App\Controller\DefaultController::subscribe
+currencies:
+    path: /currencies
+    controller: App\Controller\DefaultController::getCryptoCurrencyList
+btc_currency:
+    path: /btc_currency
+    controller: App\Controller\DefaultController::getBtcCurrency
 #app_chatbox:
 #    resource: '@ChatBoxBundle/Resources/config/routing.yml'

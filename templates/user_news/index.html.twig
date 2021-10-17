@@ -9,28 +9,8 @@
     <div class="container">
         <div class="swiper">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                {% for currency in currencies %}
-                    {%  if currency.name != "Tether" and currency.name != "USD Coin"  %}
-                        <div class="swiper-slide">
-                            <table class="table table-responsive" style="background: #f308491a;">
-                                <tr style="display: flex;align-items: center;justify-content: center;">
-                                    <td><img src="{{ currency.logo }}" width="40" alt="{{ currency.name }}"> {{ currency.name }}</td>
-                                    <td><b>Prix: </b>${{ currency.quote.USD.price | round(2, 'floor') }}</td>
-                                    <td>
-                                        <b>24h </b> {% if currency.quote.USD.percent_change_24h > 0  %}<span class="text-success"><i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}%</span>
-                                        {% else %}<span class="text-danger"> <i class="fa fa-caret-down"></i> {{ currency.quote.USD.percent_change_24h | round(2, 'floor') }}%</span> {% endif %}
-                                    </td>
-                                    <td>
-                                        <b>7J </b>{% if currency.quote.USD.percent_change_7d > 0  %}<span class="text-success"> <i class="fa fa-caret-up"></i> {{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>
-                                    {% else %}<span class="text-danger"><i class="fa fa-caret-down"></i>{{ currency.quote.USD.percent_change_7d | round(2, 'floor') }}%</span>{% endif %}
-                                    </td>
-                                    <td>${{ currency.quote.USD.market_cap | round(2, 'floor') }} sur le marché</td>
-                                </tr>
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+            <div class="swiper-wrapper justify-content-center">
+                <div class="p-4 text-center">Chargement ...</div>
             </div>
         </div>
     </div>
@@ -311,7 +291,7 @@
         <div class="bg10 p-rl-35 p-t-28 p-b-35 m-b-55">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <h5 class="f1-m-5 cl0 p-b-10">
+                    <h5 class="f1-m-5 cl0 p-b-10" id="newsletters">
                         Newsletter
                     </h5>
 
@@ -371,12 +351,41 @@
     </script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 3000,
-            }
+        $(function () {
+            $.get("{{ path('currencies') }}", function (data) {
+                $(".swiper-wrapper").html("");
+                $(".swiper-wrapper").removeClass("justify-content-center");
+                $.each(data, function (i, currency){
+                    if(currency.name != "Tether" && currency.name != "USD Coin" ){
+                        $(".swiper-wrapper").append("<div class=\"swiper-slide\">\n" +
+                            "                            <table class=\"table table-responsive\" style=\"background: #f308491a;\">\n" +
+                            "                                <tr style=\"display: flex;align-items: center;justify-content: center;\">\n" +
+                            "                                    <td><img src=\" "+currency.logo +"\" width=\"40\" alt=\""+ currency.name +"\"> "+currency.name +"</td>\n" +
+                            "                                    <td><b>Prix: </b>$"+ Math.trunc(currency.quote.USD.price) + "." + (''+currency.quote.USD.price).split('.')[1]?.slice(0, 2) +"</td>\n" +
+                            "                                    <td>\n" +
+                            "                                        <b>24h </b>"+ (( currency.quote.USD.percent_change_24h > 0 )? ("<span class=\"text-success\"><i class=\"fa fa-caret-up\"></i>"+ Math.trunc(currency.quote.USD.percent_change_24h) + "." + (''+currency.quote.USD.percent_change_24h).split('.')[1]?.slice(0, 2) +"%</span>\n") :
+                            ("<span class=\"text-danger\"> <i class=\"fa fa-caret-down\"></i> "+ Math.trunc(currency.quote.USD.percent_change_24h) + "." + (''+currency.quote.USD.percent_change_24h).split('.')[1]?.slice(0, 2) +"%</span> \n")) +
+                            "                                    </td>\n" +
+                            "                                    <td>\n" +
+                            "                                        <b>7J </b>"+ ( (currency.quote.USD.percent_change_7d > 0 )? ("<span class=\"text-success\"> <i class=\"fa fa-caret-up\"></i>"+ Math.trunc(currency.quote.USD.percent_change_7d) + "." + (''+currency.quote.USD.percent_change_7d).split('.')[1]?.slice(0, 2) +"%</span>\n") :
+                                                                        ("<span class=\"text-danger\"><i class=\"fa fa-caret-down\"></i>"+ Math.trunc(currency.quote.USD.percent_change_7d) + "." + (''+currency.quote.USD.percent_change_7d).split('.')[1]?.slice(0, 2)  +"%</span>\n") ) +
+                            "                                    </td>\n" +
+                            "                                    <td>$"+ Math.trunc(currency.quote.USD.market_cap) + "." + (''+currency.quote.USD.market_cap).split('.')[1]?.slice(0, 2) +" sur le marché</td>\n" +
+                            "                                </tr>\n" +
+                            "                            </table>\n" +
+                            "                        </div>");
+                    }
+                });
+
+                const swiper = new Swiper('.swiper', {
+                    direction: 'horizontal',
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                    }
+                });
+            });
+
         });
     </script>
 {% endblock %}
