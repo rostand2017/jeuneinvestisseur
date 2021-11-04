@@ -23,11 +23,15 @@ class NewsRepository extends ServiceEntityRepository
     public function getNewsByTitleContent(Category $category, string $search, int $offset)
     {
         $qb = $this->createQueryBuilder('n');
-         $result = $qb->where($qb->expr()->orX(
-                $qb->expr()->like('n.content', ':content'),
-                $qb->expr()->like('n.title', ':title'),
-                $qb->expr()->like('n.tags', ':tags')
-            ))
+         $result = $qb->where($qb->expr()->andX(
+                 $qb->expr()->orX(
+                    $qb->expr()->like('n.content', ':content'),
+                    $qb->expr()->like('n.title', ':title'),
+                    $qb->expr()->like('n.tags', ':tags')
+                ),
+                 $qb->expr()->eq('n.isDeleted', 0)
+             )
+         )
              ->andWhere("n.category = :category")
              ->orderBy('n.updatedat', 'desc')
             ->setParameter('title', "%".$search."%")
@@ -59,7 +63,7 @@ class NewsRepository extends ServiceEntityRepository
 
     public function getPopularsNews(int $nb){
         $connection = $this->_em->getConnection();
-        $sql = "SELECT n.id, n.title, n.metatitle, n.content, n.image, n.createdat, COUNT(*) AS `nb_viewers` FROM news n LEFT JOIN viewers v ON v.news = n.id WHERE YEAR(n.createdat) = (SELECT MAX(YEAR(createdat)) FROM news) GROUP BY n.id ORDER BY `nb_viewers` DESC LIMIT 0,".$nb;
+        $sql = "SELECT n.id, n.title, n.metatitle, n.content, n.image, n.createdat, COUNT(*) AS `nb_viewers` FROM news n LEFT JOIN viewers v ON v.news = n.id WHERE n.is_deleted = 0 AND (YEAR(n.createdat) = (SELECT MAX(YEAR(createdat)) FROM news)) GROUP BY n.id ORDER BY `nb_viewers` DESC LIMIT 0,".$nb;
         $statement = $connection->prepare($sql);
         $statement->execute();
         return $statement->fetchAll();

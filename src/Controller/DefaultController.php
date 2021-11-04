@@ -40,12 +40,12 @@ class DefaultController extends AbstractController
     public function index(){
 
         $em = $this->getDoctrine()->getManager();
-        $lastFournews = $em->getRepository(News::class)->findBy([], ['createdat'=>'desc'], 3, 0);
+        $lastFournews = $em->getRepository(News::class)->findBy(['isDeleted'=>0], ['createdat'=>'desc'], 3, 0);
         $popularsNews = $em->getRepository(News::class)->getPopularsNews(5);
         $categories = $em->getRepository(Category::class)->findAll();
         $categoriesWithNews = [];
         foreach ($categories as $category){
-            $news = $em->getRepository(News::class)->findBy(['category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
+            $news = $em->getRepository(News::class)->findBy(['isDeleted'=>0, 'category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
             array_push($categoriesWithNews, ['category'=>$category, 'news'=>$news]);
         }
         return $this->render('user_news/index.html.twig', compact("categories", "lastFournews", "categoriesWithNews", "popularsNews"));
@@ -183,7 +183,6 @@ class DefaultController extends AbstractController
         return md5(uniqid());
     }
 
-
     public function getCryptoCurrencyList(){
         $responseHttp = $this->client->request(
             'GET',
@@ -198,8 +197,6 @@ class DefaultController extends AbstractController
         }
         return new JsonResponse($datas);
     }
-
-
 
     public function getBtcCurrency(){
         $responseHttp = $this->client->request(
