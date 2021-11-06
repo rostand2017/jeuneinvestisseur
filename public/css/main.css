@@ -1874,3 +1874,12 @@ header .left-topbar-item{
   font-family: 'Dancing Script', cursive;
   font-size: 18px;
 }
+#blog-conainer h1{
+  font-size: 25px !important;
+}
+#blog-conainer h2{
+  font-size: 21px !important;
+}
+#blog-conainer h3{
+  font-size: 18px !important;
+}

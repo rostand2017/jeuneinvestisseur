@@ -91,7 +91,8 @@ class DefaultController extends AbstractController
             $viewer->setNews($news)
                 ->setViewerkey($key)
                 ->setIp($ip)
-                ->setCountry($responseHttp->toArray()['country']);
+                //->setCountry($responseHttp->toArray()['country']);
+                ->setCountry("Cameroun");
             $newsSession["news-".$news->getId()] = ["newsId"=>$news->getId(), "viewKey"=>$key];
             $request->getSession()->set(self::NEWS_SESSIONS, $newsSession);
             $em->persist($viewer);
