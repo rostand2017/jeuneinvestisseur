@@ -66,7 +66,7 @@ class DefaultController extends AbstractController
         $categories = $em->getRepository(Category::class)->findAll();
         $categoriesWithNews = [];
         foreach ($categories as $_category){
-            $_news = $em->getRepository(News::class)->findBy(['isDeleted'=>0, 'category'=>$category->getId()], ['createdat'=>'desc'], 4, 0);
+            $_news = $em->getRepository(News::class)->findBy(['isDeleted'=>0, 'category'=>$_category->getId()], ['createdat'=>'desc'], 4, 0);
             array_push($categoriesWithNews, ['category'=>$_category, 'news'=>$_news]);
         }
         return $this->render('user_news/news_category.html.twig', compact("categories", "categoriesWithNews", "news", "category", "title", "popularsNews"));
