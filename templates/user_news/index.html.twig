@@ -48,7 +48,7 @@
                     <div class="row m-rl--1">
                         {% if lastFournews | length > 1%}
                             <div class="col-12 p-rl-1 p-b-2">
-                                <div class="bg-img1 {% if lastFournews | length == 2%}size-a-3{% else %}size-a-4{% endif %} how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[1].image }}');">
+                                <div class="bg-img1 {% if lastFournews | length == 2%}size-a-3{% else %}size-a-4{% endif %} how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[1].image }}');background-position: center;background-size: auto 100%;">
                                     <a href="{{ path('news_detail', {'news': lastFournews[1].id, 'metatitle': lastFournews[1].metatitle}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
@@ -68,7 +68,7 @@
 
                         {% if lastFournews | length > 2 %}
                             <div class="{% if lastFournews | length == 3 %}col-sm-12{% else %}col-sm-12{% endif %} p-rl-1 p-b-2">
-                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[2].image }}');">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[2].image }}');background-position: center;background-size: auto 100%;">
                                     <a href="{{ path('news_detail', {'news': lastFournews[2].id, 'metatitle': lastFournews[2].metatitle}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
@@ -88,7 +88,7 @@
 
                         {% if lastFournews | length > 3 %}
                             <div class="col-sm-6 p-rl-1 p-b-2">
-                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[3].image }}');">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background: url('{{ images_blog_url }}{{ lastFournews[3].image }}');background-position: center;background-size: auto 100%;">
                                     <a href="{{ path('news_detail', {'news': lastFournews[3].id, 'metatitle': lastFournews[3].metatitle}) }}" class="dis-block how1-child1 trans-03"></a>
 
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
