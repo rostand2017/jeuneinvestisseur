@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a743a72f-821e-4164-aa7c-e3661405ca80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+      <change beforePath="$PROJECT_DIR$/templates/user_news/index.html.twig" afterPath="$PROJECT_DIR$/templates/user_news/index.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,21 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="353">
+              <caret line="68" column="100" lean-forward="false" selection-start-line="68" selection-start-column="100" selection-end-line="68" selection-end-column="100" />
               <folding>
                 <element signature="e#850#951#0#PHP" expanded="false" />
                 <element signature="e#1752#1848#0#PHP" expanded="false" />
-                <element signature="e#4851#6290#0#PHP" expanded="false" />
-                <element signature="e#6296#7113#0#PHP" expanded="false" />
-                <element signature="e#7119#8175#0#PHP" expanded="false" />
-                <element signature="e#8181#8248#0#PHP" expanded="false" />
-                <element signature="e#8254#8823#0#PHP" expanded="false" />
-                <element signature="e#8829#9304#0#PHP" expanded="false" />
-                <element signature="e#9310#9682#0#PHP" expanded="false" />
+                <element signature="e#4852#6291#0#PHP" expanded="false" />
+                <element signature="e#6297#7114#0#PHP" expanded="false" />
+                <element signature="e#7120#8176#0#PHP" expanded="false" />
+                <element signature="e#8182#8249#0#PHP" expanded="false" />
+                <element signature="e#8255#8824#0#PHP" expanded="false" />
+                <element signature="e#8830#9305#0#PHP" expanded="false" />
+                <element signature="e#9311#9683#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,10 +94,23 @@
       <file leaf-file-name="NewsRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/NewsRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="353">
               <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
               <folding>
                 <marker date="1636045519556" expanded="true" signature="2428:2708" ph="SELECT n.id,... news" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="23" column="147" lean-forward="true" selection-start-line="23" selection-start-column="147" selection-end-line="23" selection-end-column="147" />
+              <folding>
+                <marker date="1638741857810" expanded="true" signature="22219:22241" ph="..." />
+                <marker date="1638741857810" expanded="true" signature="22323:22381" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>follower</find>
       <find>bg0 p-t-70</find>
       <find>154.72.150.181</find>
       <find>$ip</find>
@@ -150,6 +162,7 @@
       <find>getPopularsNews</find>
       <find>5039</find>
       <find>getNewsByTitleContent</find>
+      <find>url</find>
     </findStrings>
     <replaceStrings>
       <replace>lastFournews</replace>
@@ -220,11 +233,11 @@
         <option value="$PROJECT_DIR$/src/EventListener/RequestListener.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
-        <option value="$PROJECT_DIR$/templates/user_news/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/NewsRepository.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/src/EventListener/ResponseListener.php" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/templates/user_news/index.html.twig" />
       </list>
     </option>
   </component>
@@ -356,8 +369,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -391,6 +402,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,7 +411,7 @@
     <property name="settings.editor.selected.configurable" value="xml.defaultSchemas" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../admin-jeuneinvestisseur" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -464,7 +477,8 @@
       <workItem from="1634876056920" duration="639000" />
       <workItem from="1636044223764" duration="3589000" />
       <workItem from="1636227926008" duration="2181000" />
-      <workItem from="1636614802408" duration="362000" />
+      <workItem from="1636614802408" duration="1504000" />
+      <workItem from="1638740598667" duration="1259000" />
     </task>
     <task id="LOCAL-00001" summary="User authentication and registration is ok.&#10;news edit, add und delete.&#10;category edit, add und delete&#10;user management">
       <created>1585055717858</created>
@@ -648,26 +662,34 @@
       <option name="project" value="LOCAL" />
       <updated>1636229394598</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bugs fixed">
+      <created>1636615759337</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1636615759337</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314022000" />
+    <option name="totallyTimeSpent" value="316423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22720365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13303342" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,7 +747,8 @@
     <MESSAGE value="changing of the logo of the banner" />
     <MESSAGE value="Loading of the currency informations with ajax" />
     <MESSAGE value="Set fontsize of article's titles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set fontsize of article's titles" />
+    <MESSAGE value="bugs fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,13 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="283" column="140" lean-forward="false" selection-start-line="283" selection-start-column="140" selection-end-line="283" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/util.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1008,12 +1024,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/NewsRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        <state relative-caret-position="353">
+          <caret line="68" column="100" lean-forward="false" selection-start-line="68" selection-start-column="100" selection-end-line="68" selection-end-column="100" />
           <folding>
-            <marker date="1636045519556" expanded="true" signature="2428:2708" ph="SELECT n.id,... news" />
+            <element signature="e#850#951#0#PHP" expanded="false" />
+            <element signature="e#1752#1848#0#PHP" expanded="false" />
+            <element signature="e#4852#6291#0#PHP" expanded="false" />
+            <element signature="e#6297#7114#0#PHP" expanded="false" />
+            <element signature="e#7120#8176#0#PHP" expanded="false" />
+            <element signature="e#8182#8249#0#PHP" expanded="false" />
+            <element signature="e#8255#8824#0#PHP" expanded="false" />
+            <element signature="e#8830#9305#0#PHP" expanded="false" />
+            <element signature="e#9311#9683#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1029,20 +1053,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/NewsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="353">
+          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
           <folding>
-            <element signature="e#850#951#0#PHP" expanded="false" />
-            <element signature="e#1752#1848#0#PHP" expanded="false" />
-            <element signature="e#4851#6290#0#PHP" expanded="false" />
-            <element signature="e#6296#7113#0#PHP" expanded="false" />
-            <element signature="e#7119#8175#0#PHP" expanded="false" />
-            <element signature="e#8181#8248#0#PHP" expanded="false" />
-            <element signature="e#8254#8823#0#PHP" expanded="false" />
-            <element signature="e#8829#9304#0#PHP" expanded="false" />
-            <element signature="e#9310#9682#0#PHP" expanded="false" />
+            <marker date="1636045519556" expanded="true" signature="2428:2708" ph="SELECT n.id,... news" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_news/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="23" column="147" lean-forward="true" selection-start-line="23" selection-start-column="147" selection-end-line="23" selection-end-column="147" />
+          <folding>
+            <marker date="1638741857810" expanded="true" signature="22219:22241" ph="..." />
+            <marker date="1638741857810" expanded="true" signature="22323:22381" ph="..." />
           </folding>
         </state>
       </provider>
